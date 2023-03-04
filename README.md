@@ -1,2 +1,1 @@
-# kYa.UrlShortener
-Let's start and then we'll see)
+Try to [see](docs/GeneralInfo.excalidraw)
