@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using UrlShort.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,3 +22,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.Run();
+
+class ApiDbContext : DbContext
+{
+    public virtual DbSet<UrlManagement> Urls { get; set; }
+
+    public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
+    {}
+} 
