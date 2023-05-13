@@ -112,6 +112,7 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+*.vs
 
 # Visual Studio Trace Files
 *.e2e
@@ -155,6 +156,7 @@ AutoTest.Net/
 
 # Installshield output folder
 [Ee]xpress/
+.[Vv]s/
 
 # DocProject is a documentation generator add-in
 DocProject/buildhelp/
