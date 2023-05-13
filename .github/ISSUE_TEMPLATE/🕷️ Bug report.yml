@@ -6,7 +6,14 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Please make sure to search for existing issues before filing a new one!
+    value: Please make sure to search for existing issuesbefore filing a new one!
+- type: input
+  attributes:
+    label: Microsoft PowerToys version
+    placeholder: 0.68.0
+    description: Hover over system tray icon or look at Settings
+  validations:
+    required: true
 
 - type: dropdown
   attributes:
@@ -24,6 +31,14 @@ body:
       - Other (please specify in "Steps to Reproduce")
   validations:
     required: true
+
+- type: dropdown
+  attributes:
+    label: Running as admin
+    description: Are you running PowerToys as Admin?
+    options:
+      - "Yes"
+      - "No"
 
 - type: dropdown
   attributes:
