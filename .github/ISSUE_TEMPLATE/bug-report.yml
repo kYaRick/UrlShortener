@@ -1,7 +1,10 @@
-name: 🐞 Bug
-description: File a bug/issue
-title: "[BUG] <title>"
-labels: [Bug, Needs Triage]
+name: 🐞 Bug report
+description: Report errors or unexpected behavior 
+labels:
+- bug
+- help wanted
+assignees:
+- kYaRick
 body:
 - type: checkboxes
   attributes:
@@ -38,7 +41,7 @@ body:
     label: Environment
     description: |
       examples:
-        - **OS**: Ubuntu 20.04
+        - **OS**: Ubuntu 22.04
         - **Node**: 13.14.0
         - **npm**: 7.6.3
     value: |

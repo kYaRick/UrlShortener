@@ -1,8 +1,10 @@
 name: "📚 Documentation Issue"
 description: Report issues in our documentation
 labels: 
-- Issue-Docs
-- Needs-Triage 
+- documentation
+assignees:
+- kYaRick
+- svyatoslavbohatko
 body:
 - type: textarea
   attributes: 
