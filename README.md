@@ -1,30 +1,3 @@
-<a href='https://github.com/chroline/lightning-share'>
-  
-<img alt="URL SHORTENER" src="assets/thumbnail.svg" width="100%" />
-  
-</a>
-
-<br />
-<br />
-
-<p align='center'>
-  
-<a href='https://lightning-share.vercel.app'>
-  
-<img alt="Hosted on Vercel" src='https://img.shields.io/badge/hosted%20on-vercel-black?logo=vercel&style=for-the-badge'>
-  
-</a>
-  
-<a href='https://github.com/chroline/lightning-share/blob/main/LICENSE'>
-  
-<img alt="MIT License" src='https://img.shields.io/github/license/chroline/lightning-share?style=for-the-badge'>
-  
-</a>
-  
-</p>
-
-<br />
-
 <div align='center'>
   
 # ⚡️ URL SHORTENER
@@ -51,7 +24,7 @@ URL SHORTENER is a file hosting and sharing service powered by [Firebase](https:
 
 |**Upload** | **Download** |
 |---|---|
-|![Uploading a file](https://raw.githubusercontent.com/chroline/lightning-share/main/assets/upload.gif)|![Downloading a file](https://raw.githubusercontent.com/chroline/lightning-share/main/assets/download.gif)|
+|![Uploading a file](#)|![Downloading a file](#)|
 
 # 🧑‍💻 Development
 
