@@ -4,17 +4,16 @@ import {
   Link,
   Stack,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 
 import { Members } from "./Members";
 
 export const Footer = () => {
   return (
-    <>
+    <VStack>
       <Stack
         direction={{ base: "column", sm: "row" }}
-        h={20}
-        w={"full"}
         px={8}
         align={"center"}
         justify={"center"}
@@ -22,24 +21,22 @@ export const Footer = () => {
         spacing={2}
       >
         <HStack spacing={1}>
-          <Text>made with</Text>
           <Text>
             made with ❤️ to 🇺🇦 by{" "}
-              <Members/>
+            <Members />
           </Text>
         </HStack>
-        <Text display={{ base: "none", sm: "block" }} opacity={0.8}>
-          •
-        </Text>
+
+      </Stack>
+      <Stack paddingBottom={5}>
         <Link
-          href={"#"}
+          href={"https://github.com/kYaRick/UrlShortener"}
           isExternal
           opacity={0.8}
-          _hover={{ opacity: 1, textDecoration: "underline" }}
-        >
-          Read about the project
+          _hover={{ opacity: 1, textDecoration: "underline" }}>
+          • Read about the project •
         </Link>
       </Stack>
-    </>
+    </VStack>
   );
 };
