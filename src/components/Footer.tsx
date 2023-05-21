@@ -1,19 +1,9 @@
 import React from "react";
 import {
-  Box,
-  Button,
   HStack,
   Link,
   Stack,
   Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure
 } from "@chakra-ui/react";
 
 import { Members } from "./Members";
