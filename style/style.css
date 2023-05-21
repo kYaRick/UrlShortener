@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -357,14 +358,14 @@ h2 {
 
 footer {
   background: #0c0c0e;
-  max-height: 80px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px 40px;
 }
 
-footer > div {
+footer>div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -389,11 +390,9 @@ footer > div {
 footer button {
   width: 237px;
   height: 53px;
-  background: linear-gradient(
-    180deg,
-    #e2e2e2 0%,
-    rgba(134, 134, 134, 0.51) 100%
-  );
+  background: linear-gradient(180deg,
+      #e2e2e2 0%,
+      rgba(134, 134, 134, 0.51) 100%);
   border-radius: 33px;
   border: none;
   font-family: "Montserrat";
@@ -463,7 +462,7 @@ footer button {
     font-size: 28px;
   }
 
-  .container > div {
+  .container>div {
     justify-content: space-between;
   }
 
@@ -889,7 +888,7 @@ footer button {
   }
 
   .user_authentication {
-    margin-left: 78px;
+    margin-left: 80px;
     margin-top: 5px;
   }
 
@@ -1020,6 +1019,7 @@ footer button {
     right: -20px;
     width: 35px;
   }
+
   .user_comment p {
     font-size: 13px;
   }
@@ -1218,6 +1218,7 @@ footer button {
     height: 47px;
     margin-right: 10px;
   }
+
   .background_question_mark img {
     width: 35px;
     height: 35px;
@@ -1295,6 +1296,7 @@ footer button {
   .about_us {
     gap: 0;
   }
+
   .text {
     width: 290px;
     height: auto;
@@ -1357,6 +1359,7 @@ footer button {
     right: -20px;
     width: 35px;
   }
+
   .user_comment p {
     font-size: 13px;
   }
@@ -1381,7 +1384,8 @@ footer button {
     height: 30px;
     font-size: 12px;
     margin-right: 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0em;
+    line-height: 0%;
   }
 
   .background_question_mark {
@@ -1389,6 +1393,7 @@ footer button {
     height: 41px;
     margin-right: 10px;
   }
+
   .background_question_mark img {
     width: 30px;
     height: 30px;

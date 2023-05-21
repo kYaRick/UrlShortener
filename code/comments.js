@@ -1,5 +1,3 @@
-/* Comments */
-
 const downArrow = document.querySelector(".down_arrow");
 downArrow.addEventListener("click", function () {
   const hiddenComments = document.querySelectorAll(".comment.hidden");

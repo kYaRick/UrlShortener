@@ -1,5 +1,3 @@
-/* Menu */
-
 const hamburgerMenu = document.querySelector(".hamburger_menu");
 const navigation = document.querySelector("nav");
 
