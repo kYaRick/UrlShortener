@@ -47,7 +47,7 @@ export const Members = () => {
         </Text>
       </Link>
 
-      <Modal size={"xl"} scrollBehavior="inside" isOpen={isOpen} onClose={onClose}>
+      <Modal size={"3xl"} scrollBehavior="inside" isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalOverlay />
         <ModalContent>
