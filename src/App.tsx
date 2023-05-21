@@ -6,6 +6,7 @@ import { ViewController, ViewControllerProvider } from "./ViewController";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { LoaderScreen } from "./components/LoaderScreen";
+import { Members } from "./components/Members";
 import { Navbar } from "./components/Navbar";
 import AuthService from "./services/auth";
 import ErrorHandlingService from "./services/error-handling";
@@ -36,7 +37,7 @@ function App() {
     <ViewControllerProvider>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider resetCSS theme={extendTheme(theme)}>
-        {(setupState.loading || setupState.error) && <LoaderScreen />}
+        {(setupState.loading || setupState.error) && <LoaderScreen /> && <Members/>}
         <VStack justify={"stretch"} h={"full"} w={"full"}>
           <Navbar />
           <Hero />

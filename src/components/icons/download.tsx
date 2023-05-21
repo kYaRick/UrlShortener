@@ -1,5 +1,4 @@
-import { Box } from "@chakra-ui/react";
-import { ChakraProps } from "@chakra-ui/system/dist/types/system.types";
+import { Box, ChakraProps } from "@chakra-ui/react";
 
 export const DownloadIcon = (props: ChakraProps) => (
   <Box
