@@ -97,7 +97,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
           </ModalBody>
           <ModalFooter>
             <Button
-              colorScheme={"green"}
+              colorScheme={"violet"}
               mr={3}
               isDisabled={wordCode.split(" ").length !== 3}
               onClick={() => openFileFn(wordCode)}

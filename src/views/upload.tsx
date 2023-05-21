@@ -86,7 +86,7 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
           </ModalBody>
           <ModalFooter>
             <Button
-              colorScheme={"green"}
+              colorScheme={"violet"}
               isDisabled={files.length === 0}
               isLoading={uploadFileState.loading}
               onClick={() => uploadFileFn(files[0])}

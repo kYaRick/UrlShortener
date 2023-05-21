@@ -1,4 +1,13 @@
-import { Box, Heading, HStack, IconButton, useColorMode } from "@chakra-ui/react";
+import React from "react";
+import {
+  Box,
+  Text,
+  Heading,
+  HStack,
+  IconButton,
+  Switch,
+  useColorMode,
+} from "@chakra-ui/react";
 
 import { useViewController } from "../ViewController";
 import { LogoColor } from "./icons/logo-color";
@@ -10,7 +19,6 @@ import { UserIcon } from "./icons/user";
 
 export const Navbar = () => {
   const [, setView] = useViewController();
-
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -35,13 +43,24 @@ export const Navbar = () => {
           onClick={() => setView({ slug: "auth" })}
         />
       </HStack>
+
       <HStack h={20} spacing={{ base: 0, sm: 4 }} position={"absolute"} left={"50%"} transform={"translateX(-50%)"}>
         <Box w={10}>{colorMode === "dark" ? <LogoWhite /> : <LogoColor />}</Box>
         <Heading fontSize={"2xl"} fontWeight={"bold"} display={{ base: "none", sm: "block" }}>
           URL SHORTENER
         </Heading>
       </HStack>
+
       <HStack h={20}>
+
+        <Text>
+          🇺🇸 ENG
+        </Text>
+        <Switch id='isUkraineLang' colorScheme={{ light: "violet", dark: "purple" }[colorMode]} />
+        <Text>
+          🇺🇦 UKR
+        </Text>
+
         <IconButton
           aria-label={"Toggle color mode"}
           icon={
@@ -51,6 +70,7 @@ export const Navbar = () => {
           }
           onClick={toggleColorMode}
         />
+
       </HStack>
     </Box>
   );
