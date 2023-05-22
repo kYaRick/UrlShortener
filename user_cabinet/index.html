@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Cabinet</title>
+  <link rel="stylesheet" href="../style/user_cabinet.css" />
+  <link rel="icon" href="../image/logo.svg" />
+</head>
+
+<body>
+  <!-- Menu -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" class="link_to_the_main_page">
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
+      </a>
+    </div>
+    <div class="hamburger_menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <div class="language_selection">
+        <span class="ukr-selector" data-lang="ukr">UKR</span>
+        <img src="../image/Ukrainian_flag.svg" alt="Ukrainian flag" class="ukr-selector" />
+        <img src="../image/vertical_line.svg" alt="Vertical line" />
+        <img src="../image/USA_flag.svg" alt="USA flag" class="eng-selector" />
+        <span class="eng-selector" data-lang="eng">ENG</span>
+      </div>
+      <div class="user_authentication">
+        <a href="../login/index.html" data-lang="login">Log in</a>
+        <img src="../image/vertical_line.svg" alt="Vertical line" />
+        <a href="../registration/index.html" data-lang="registration">Registration</a>
+        <div class="avatar_background">
+          <a href="./user_cabinet/index.html"><img src="./image/avatar.svg" alt="Avatar" /></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Search -->
+  <section class="url_submit_container">
+    <form>
+      <input type="text" name="url" id="url" placeholder="Search in table" data-lang="placeholder_2" />
+      <button type="submit">
+        <img src="../image/right_arrow.svg" alt="Right arrow" />
+      </button>
+    </form>
+  </section>
+
+  <!-- Table -->
+  <section class="user_cabinet_section">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th class="source-name">Source name</th>
+            <th class="source-url">Source URL</th>
+            <th class="start">Start</th>
+            <th class="end">End</th>
+          </tr>
+        </thead>
+      </table>
+      <div class="scroll">
+        <table>
+          <tbody>
+            <tr>
+              <td class="source-name">Source 1</td>
+              <td class="source-url">http://example.com/source1</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 2</td>
+              <td class="source-url">http://example.com/source2</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 3</td>
+              <td class="source-url">http://example.com/source3</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 4</td>
+              <td class="source-url">http://example.com/source4</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 5</td>
+              <td class="source-url">http://example.com/source5</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 6</td>
+              <td class="source-url">http://example.com/source6</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 7</td>
+              <td class="source-url">http://example.com/source7</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+            <tr>
+              <td class="source-name">Source 8</td>
+              <td class="source-url">http://example.com/source8</td>
+              <td class="start">text</td>
+              <td class="end">text</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview space -->
+  <section class="preview_space">
+    <p>Preview space</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer_logo">
+      <a href="../index.html" class="link_to_the_main_page">
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
+      </a>
+    </div>
+    <div>
+      <button data-lang="write_to_support">write to support</button>
+    </div>
+    <div class="background_question_mark">
+      <img src="../image/question_mark.svg" alt="Question mark" />
+    </div>
+  </footer>
+
+  <script src="../code/menu.js"></script>
+  <script src="../code/language_selection.js"></script>
+</body>
+
+</html>
