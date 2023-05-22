@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-lang="Registration_page">Registration Page</title>
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="stylesheet" href="../style/registration.css" />
+  <link rel="icon" href="../image/logo.svg" />
+</head>
+
+<body>
+  <!-- Menu -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" class="link_to_the_main_page">
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
+      </a>
+    </div>
+    <div class="hamburger_menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <div class="language_selection">
+        <span class="ukr-selector" data-lang="ukr">UKR</span>
+        <img src="../image/Ukrainian_flag.svg" alt="Ukrainian flag" class="ukr-selector" />
+        <img src="../image/vertical_line.svg" alt="Vertical line" />
+        <img src="../image/USA_flag.svg" alt="USA flag" class="eng-selector" />
+        <span class="eng-selector" data-lang="eng">ENG</span>
+      </div>
+      <div class="user_authentication">
+        <a href="../login/index.html" data-lang="login">Log in</a>
+        <img src="../image/vertical_line.svg" alt="Vertical line" />
+        <a href="../registration/index.html" data-lang="registration">Registration</a>
+        <div class="avatar_background">
+          <img src="../image/avatar.svg" alt="Avatar" />
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Registration section -->
+  <section class="registration_section">
+    <form>
+      <h1 data-lang="Registration_page">Registration page</h1>
+      <div class="user_photo">
+        <img src="../image/white.svg" alt="White Background" id="profile_photo" class="photo" />
+        <label for="input-file">
+          <img src="../image/add_photo_button.svg" alt="Add photo button" class="add_photo_button" />
+        </label>
+        <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="input-file" />
+      </div>
+
+      <div class="line">
+        <div>
+          <label for="first-name" data-lang="first_name">First name:</label>
+          <input type="text" id="first-name" name="first-name" />
+        </div>
+        <div>
+          <label for="second-name" data-lang="second_name">Second name:</label>
+          <input type="text" id="second-name" name="second-name" />
+        </div>
+      </div>
+
+      <div class="line">
+        <div>
+          <label for="email" data-lang="email">E-mail address:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div>
+          <label for="short-name" data-lang="short_name">Short name:</label>
+          <input type="text" id="short-name" name="short-name" />
+        </div>
+      </div>
+
+      <div class="line">
+        <div>
+          <label for="password" data-lang="password">Password:</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <div>
+          <label for="repeat-password" data-lang="repeat_password">Repeat password:</label>
+          <input type="password" id="repeat-password" name="repeat-password" />
+        </div>
+      </div>
+
+      <div class="line phone-number">
+        <label for="phone" data-lang="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="line about-me">
+        <label for="about-me" data-lang="about_me">About me:</label>
+        <textarea id="about-me" name="about-me"></textarea>
+      </div>
+
+      <h2 data-lang="choice">
+        How did you learn about our <br />
+        service ?
+      </h2>
+
+      <div class="choice">
+        <div>
+          <input type="radio" id="google-search" name="search-method" value="google-search" />
+          <label for="google-search" data-lang="google_search">I found your service through a Google search</label>
+        </div>
+
+        <div>
+          <input type="radio" id="friend-recommendation" name="search-method" value="friend-recommendation" />
+          <label for="friend-recommendation" data-lang="friend_recommendation">A friend recommended your service to
+            me</label>
+        </div>
+
+        <div>
+          <input type="radio" id="social-media" name="search-method" value="social-media" />
+          <label for="social-media" data-lang="social_media">I discovered your service through social media</label>
+        </div>
+
+        <div>
+          <input type="radio" id="podcast-video" name="search-method" value="podcast-video" />
+          <label for="podcast-video" data-lang="podcast_video">I learned about your service from a podcast or video that
+            I
+            watched</label>
+        </div>
+
+        <div>
+          <input type="radio" id="other" name="search-method" value="other" />
+          <label for="other" data-lang="other">Other</label>
+        </div>
+
+        <div class="register_button">
+          <button data-lang="Register">Register</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer_logo">
+      <a href="../index.html" class="link_to_the_main_page">
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
+      </a>
+    </div>
+    <div>
+      <button data-lang="write_to_support">write to support</button>
+    </div>
+    <div class="background_question_mark">
+      <img src="../image/question_mark.svg" alt="Question mark" />
+    </div>
+  </footer>
+
+  <script src="../code/menu.js"></script>
+  <script src="../code/photo_upload.js"></script>
+  <script src="../code/language_selection.js"></script>
+</body>
+
+</html>

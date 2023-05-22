@@ -1,0 +1,726 @@
+@import url("style.css");
+
+.registration_section {
+  background-color: #86acc5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 22px;
+  border-radius: 99px;
+}
+
+.registration_section h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 59px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.registration_section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user_photo {
+  position: relative;
+}
+
+.photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.registration_section input[type="file"] {
+  display: none;
+}
+
+.add_photo_button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fbfbfb;
+  border: 0.5px solid #929292;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: absolute;
+  top: 180px;
+  left: 180px;
+}
+
+.line {
+  display: flex;
+  gap: 190px;
+}
+
+.line div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.line label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.line input {
+  width: 383px;
+  height: 80px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 59px;
+  padding-left: 15px;
+}
+
+.line .phone-number {
+  gap: 0;
+}
+
+.phone-number {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.phone-number label {
+  margin-bottom: 10px;
+}
+
+.registration_section input[type="tel"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 30px;
+}
+
+.about-me label {
+  margin-bottom: 10px;
+}
+
+.registration_section textarea {
+  width: 1066px;
+  height: 245px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  resize: none;
+  padding: 30px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 39px;
+  margin-bottom: 40px;
+}
+
+.registration_section h2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 39px;
+  line-height: 67px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.choice > div {
+  margin-bottom: 10px;
+}
+
+.choice label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 59px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.choice input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 30px;
+}
+
+.registration_section button {
+  /* width: 194px; */
+  width: auto;
+  height: 60px;
+  background: linear-gradient(
+    266.02deg,
+    #03ff7a 2.25%,
+    rgba(3, 255, 225, 0.853906) 45.52%,
+    #fcee21 100%
+  );
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 39px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 40px;
+  padding: 10px 15px;
+display: flex;
+align-items: center;
+}
+
+.register_button {
+  margin: 0 auto;
+}
+
+/* Media queries */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .line {
+    gap: 150px;
+  }
+
+  .registration_section textarea {
+    width: 900px;
+    height: 245px;
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    gap: 0;
+    margin-top: 30px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .registration_section {
+    margin: 22px;
+    border-radius: 99px;
+  }
+
+  .registration_section h1 {
+    font-size: 45px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  .add_photo_button {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 180px;
+    left: 180px;
+  }
+
+  .line {
+    gap: 120px;
+  }
+
+  .line div {
+    margin-bottom: 60px;
+  }
+
+  .line label {
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+
+  .line input {
+    width: 383px;
+    height: 75px;
+    font-size: 23px;
+    line-height: 59px;
+    padding-left: 15px;
+  }
+
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    gap: 0;
+    margin-top: 30px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+
+  .registration_section textarea {
+    width: 880px;
+    height: 230px;
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+
+  .registration_section h2 {
+    font-size: 39px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice > div {
+    margin-bottom: 10px;
+  }
+
+  .choice label {
+    font-size: 25px;
+  }
+
+  .choice input[type="radio"] {
+    margin-right: 30px;
+  }
+
+  .registration_section button {
+    /* width: 194px; */
+    height: 60px;
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .registration_section h1 {
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  .line {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .line label {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+
+  .line input {
+    width: 450px;
+    height: 75px;
+    font-size: 26px;
+    line-height: 59px;
+    padding-left: 15px;
+  }
+
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    align-self: center;
+    gap: 0;
+    margin-top: 60px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+
+  .registration_section textarea {
+    width: 550px;
+    height: 200px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .registration_section h2 {
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice {
+    width: 90%;
+  }
+
+  .choice label {
+    font-size: 24px;
+  }
+
+  .choice input[type="radio"] {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .registration_section button {
+    /* width: 194px; */
+    height: 60px;
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+
+  .register_button {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .registration_section h1 {
+    font-size: 37px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+  }
+
+  .add_photo_button {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 170px;
+    left: 170px;
+  }
+
+  .line {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .line label {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+
+  .line input {
+    width: 450px;
+    height: 68px;
+    font-size: 24px;
+    line-height: 59px;
+    padding-left: 15px;
+  }
+
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    align-self: center;
+    gap: 0;
+    margin-top: 60px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+
+  .registration_section textarea {
+    width: 500px;
+    height: 160px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .registration_section h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice {
+    width: 85%;
+  }
+
+  .choice label {
+    font-size: 22px;
+  }
+
+  .choice input[type="radio"] {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .registration_section button {
+    /* width: 194px; */
+    height: 55px;
+    font-size: 23px;
+    margin-bottom: 40px;
+  }
+
+  .register_button {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .registration_section h1 {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .add_photo_button {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 140px;
+    left: 140px;
+  }
+
+  .line {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .line div {
+    margin-bottom: 20px;
+  }
+
+  .line label {
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+  }
+
+  .line input {
+    width: 400px;
+    height: 57px;
+    font-size: 20px;
+    line-height: 59px;
+    padding-left: 15px;
+  }
+
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    align-self: center;
+    gap: 0;
+    margin-top: 60px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+
+  .registration_section textarea {
+    width: 400px;
+    height: 140px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .registration_section h2 {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice {
+    width: 90%;
+  }
+
+  .choice label {
+    font-size: 20px;
+  }
+
+  .choice input[type="radio"] {
+    margin-right: 20px;
+    margin-left: 20px;
+    transform: scale(1.2);
+  }
+
+  .registration_section button {
+    /* width: 180px; */
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .register_button {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .registration_section h1 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+  }
+
+  .add_photo_button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+  }
+
+  .line {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .line div {
+    margin-bottom: 20px;
+  }
+
+  .line label {
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+  }
+
+  .line input {
+    width: 300px;
+    height: 50px;
+    font-size: 16px;
+    padding-left: 15px;
+  }
+
+  .phone-number {
+    gap: 0;
+  }
+
+  .phone-number label {
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    align-self: center;
+    gap: 0;
+    margin-top: 60px;
+  }
+
+  .about-me label {
+    margin-bottom: 10px;
+  }
+
+  .registration_section textarea {
+    width: 300px;
+    height: 150px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .registration_section h2 {
+    font-size: 23px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice {
+    width: 90%;
+  }
+
+  .choice label {
+    font-size: 20px;
+  }
+
+  .choice input[type="radio"] {
+    margin-right: 20px;
+    margin-left: 20px;
+    transform: scale(1.2);
+  }
+
+  .registration_section button {
+    /* width: 140px; */
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .register_button {
+    margin: 0 auto;
+  }
+}
