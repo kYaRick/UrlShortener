@@ -18,13 +18,15 @@
 
 # 👋 Introduction
 
-URL SHORTENER is a file hosting and sharing service powered by [Firebase](https://firebase.google.com). Users can upload files under 20MB and download hosted files using a "share code" (a short 3 word code provided by [words-aas](https://github.com/chroline/words-aas)). After uploading a file, the file uploader can retrieve the share code and share it with others or delete the file at any time. Files will automatically be deleted after 21 days (WIP).
+"Url shortener" is a file hosting and sharing service powered by [Firebase](https://firebase.google.com). Users can upload files under 20MB and download hosted files using a "share code" (a short 3 word code provided by [words-aas](https://github.com/chroline/words-aas)). After uploading a file, the file uploader can retrieve the share code and share it with others or delete the file at any time. Files will automatically be deleted after 21 days (WIP).
 
 # 🚀 Usage
 
-|**Upload** | **Download** |
-|---|---|
-|![Uploading a file](#)|![Downloading a file](#)|
+|**Upload**|
+|:---:|
+|![Uploading a file](./assets/ShareMethod.gif)|
+|**Download**|
+|![Downloading a file](./assets/DownloadMethods.gif)|
 
 # 🧑‍💻 Development
 
@@ -50,7 +52,7 @@ Replace the `firebaseConfig` variable in `src/util/firebase-config.ts` with the 
 
 # ❤️ Support this project
 
-If you want to say thank you and/or support active development of URL SHORTENER:
+If you want to say thank you and/or support active development of our team:
 
 - Add a GitHub Star to the project!
 - Leave a comment or a reaction on the tutorial of how this project was built!
