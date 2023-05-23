@@ -24,7 +24,6 @@ import anya_ph from '../assets/authors/Anya.jpg'
 import misha_ph from '../assets/authors/Misha.jpg'
 
 
-
 export const Members = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -77,7 +76,7 @@ export const Members = () => {
                   </VStack>
                 </HStack>
                 <Text>Introducing Svyatoslav, our brilliant full stack developer 🌟! Svyatoslav has been an invaluable asset to our team, providing extensive support and guidance in all things related to React. 🚀 He played a crucial role in setting up our work environment and workflow, making sure everything runs smoothly. 💻
-                With his deep understanding of both backend and frontend development, Svyatoslav seamlessly connects the dots between the two, ensuring a seamless integration of our systems. 🤝 He has implemented various design patterns and best practices, showcasing his extensive experience and mastery in the field. 🎯
+                With his deep understanding of both backend and frontend deverlopment, Svyatoslav seamlessly connects the dots between the two, ensuring a seamless integration of our systems. 🤝 He has implemented various design patterns and best practices, showcasing his extensive experience and mastery in the field. 🎯
                 Svyatoslav's contributions have greatly improved our development process, allowing us to deliver efficient, high-quality solutions. His expertise and dedication make him an invaluable teammate, always ready to take on new challenges and provide innovative solutions. 🙌</Text>
               </Stack>
 

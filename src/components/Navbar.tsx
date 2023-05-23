@@ -6,6 +6,17 @@ import {
   HStack,
   IconButton,
   Switch,
+
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+
   useColorMode,
 } from "@chakra-ui/react";
 
@@ -16,6 +27,52 @@ import { MoonStarsIcon } from "./icons/moon-stars";
 import { ServerIcon } from "./icons/server";
 import { SunIcon } from "./icons/sun";
 import { UserIcon } from "./icons/user";
+import { useState } from "react";
+
+const LngSwitch = ({ colorMode }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+    // Additional logic or state updates on mouse enter
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    // Additional logic or state updates on mouse leave
+  };
+
+  return (
+    <Popover>
+
+      <PopoverTrigger>
+        <span>
+          <div
+            onMouseEnter={handleMouseOver}
+            onMouseLeave={handleMouseLeave}
+            style={{ display: "inline-block" }}
+          >
+            <Switch
+              id="isUkraineLang"
+              colorScheme={{ light: "violet", dark: "purple" }[colorMode]}
+              isDisabled
+            />
+          </div>
+        </span>
+      </PopoverTrigger>
+
+      <PopoverContent bg="tomato" color="white">
+        <PopoverHeader fontWeight="semibold">Support team:</PopoverHeader>
+        <PopoverArrow bg="pink.500" />
+        <PopoverCloseButton bg="purple.500" />
+        <PopoverBody>
+          We are at the stage of adding this functionality to the resource.<br />
+          Thank you for your understanding
+        </PopoverBody>
+      </PopoverContent>
+    </Popover >
+  );
+};
 
 export const Navbar = () => {
   const [, setView] = useViewController();
@@ -53,13 +110,9 @@ export const Navbar = () => {
 
       <HStack h={20}>
 
-        <Text>
-          🇺🇸 ENG
-        </Text>
-        <Switch id='isUkraineLang' colorScheme={{ light: "violet", dark: "purple" }[colorMode]} />
-        <Text>
-          🇺🇦 UKR
-        </Text>
+        <Text>🇺🇸</Text>
+        <LngSwitch colorMode={colorMode} />
+        <Text paddingRight={"5"}>🇺🇦</Text>
 
         <IconButton
           aria-label={"Toggle color mode"}

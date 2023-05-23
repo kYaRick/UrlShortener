@@ -25,7 +25,7 @@ const providers = {
 providers.apple.addScope("email");
 providers.apple.addScope("name");
 
-class AuthService {
+const AuthService () =>  {
   private static _I = new AuthService();
   public static get I() {
     return this._I;
