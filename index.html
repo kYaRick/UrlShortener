@@ -35,8 +35,8 @@
         <a href="login/index.html" data-lang="login">Log in</a>
         <img src="./image/vertical_line.svg" alt="Vertical line" />
         <a href="registration/index.html" data-lang="registration">Registration</a>
-       <div class="avatar_background">
-        <a href="./user_cabinet/index.html"><img src="./image/avatar.svg" alt="Avatar" /></a>
+        <div class="avatar_background">
+          <a href="./user_cabinet/index.html"><img src="./image/avatar.svg" alt="Avatar" /></a>
         </div>
       </div>
     </nav>
@@ -55,13 +55,30 @@
     </form>
   </section>
 
-  <!-- Drop zone -->
+  <!-- Drop zone  -->
   <section class="drop_zone">
-    <div><img src="./image/file.svg" alt="File" /></div>
-    <div>
+    <div class="border">
+      <input type="file" id="upload-button" multiple accept="image/*" />
+      <label for="upload-button"><img src="./image/file.svg" alt="File" /></label>
       <p>Drop Your Files Here</p>
+      <div id="image-display"></div>
     </div>
   </section>
+
+  <!-- Error message  -->
+  <div class="error hidden">
+    <h2 class="error_header">File error</h2>
+    <p>
+      Yo! <br />
+      you are trying to uploada file <br />
+      we cannot upload on our server! <br />
+      make sure that your actions are <br />
+      correct and if you are sure contact <br />
+      support
+    </p>
+    <button class="ok_button">Ok</button>
+    <button class="support_button">Write to support</button>
+  </div>
 
   <!-- Section About Us -->
   <section class="about_url_shortener">
@@ -86,7 +103,7 @@
 
   <!-- Reviews -->
   <section class="reviews">
-    <h2 data-lang="reviews">Reviews</h2>
+    <h2 data-lang="reviews" class="reviews_header">Reviews</h2>
     <div class="container">
       <div class="comment">
         <div class="user">
@@ -182,6 +199,7 @@
     </div>
   </footer>
   <script src="./code/menu.js"></script>
+  <script src="./code/drop_zone.js"></script>
   <script src="./code/comments.js"></script>
   <script src="./code/language_selection.js"></script>
 </body>

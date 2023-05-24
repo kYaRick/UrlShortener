@@ -87,7 +87,7 @@ nav a {
   line-height: 34px;
 }
 
-.avatar_background a{
+.avatar_background a {
   width: 50px;
   height: 50px;
   background: #ffffff;
@@ -160,32 +160,149 @@ nav a {
 /* Drop zone */
 
 .drop_zone {
-  background-image: url("../image/border.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px;
+  margin: 40px 10px;
 }
 
-.drop_zone img {
-  max-width: 180px;
-  margin-bottom: 20px;
+.border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 95%;
+  border-radius: 56px;
+  border: 2px dashed black;
+  padding: 70px;
 }
 
-.drop_zone p {
+.border img {
+  width: 130px;
+}
+
+.border p {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 0%;
+  text-align: center;
   letter-spacing: 0.395em;
   color: #888888;
-  margin: 20px 0;
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+#image-display {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+#image-display figure {
+  width: 45%;
+}
+
+#image-display img {
+  width: 100%;
+}
+
+#image-display figcaption {
+  font-size: 18px;
+  text-align: center;
+  color: #63686e;
+}
+
+.active {
+  border: 2px dashed #75f08f;
+}
+
+/* Error message */
+
+.error {
+  background: #ff4a4a;
+  width: 550px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 84px;
+  margin: 0 auto;
+}
+
+.error_header {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 0%;
+  letter-spacing: 0.395em;
+  color: #ffffff;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.error p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 39px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ok_button {
+  background: #75f08f;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 39px;
+  text-align: center;
+  color: #323232;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.support_button {
+  background: #333333;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Section About Us */
@@ -250,7 +367,7 @@ nav a {
   margin: 0 40px 40px;
 }
 
-h2 {
+.reviews_header {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -426,14 +543,38 @@ footer button {
     right: 80px;
   }
 
-  /* Drop zone */
+  /* Error message */
 
-  .drop_zone {
-    margin: -5px 40px -40px 40px;
+  .error {
+    width: 550px;
+    height: 470px;
+    gap: 30px;
+    margin: 0 auto;
   }
 
-  .drop_zone img {
-    max-width: 160px;
+  .error_header {
+    font-size: 25px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 18px;
+    line-height: 39px;
+  }
+
+  .ok_button {
+    font-size: 20px;
+    line-height: 39px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 20px;
+    line-height: 24px;
+    width: 200px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -461,7 +602,7 @@ footer button {
 
   /* Reviews */
 
-  h2 {
+  .reviews_header {
     font-size: 28px;
   }
 
@@ -522,14 +663,38 @@ footer button {
     right: 60px;
   }
 
-  /* Drop zone */
+  /* Error message */
 
-  .drop_zone {
-    margin: -45px 40px -80px 40px;
+  .error {
+    width: 550px;
+    height: 430px;
+    gap: 25px;
+    margin: 0 auto;
   }
 
-  .drop_zone img {
-    max-width: 160px;
+  .error_header {
+    font-size: 25px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 18px;
+    line-height: 39px;
+  }
+
+  .ok_button {
+    font-size: 18px;
+    line-height: 39px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 18px;
+    line-height: 24px;
+    width: 200px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -566,7 +731,7 @@ footer button {
     justify-content: space-between;
   }
 
-  h2 {
+  .reviews_header {
     font-size: 28px;
     margin-bottom: 50px;
   }
@@ -645,12 +810,52 @@ footer button {
 
   /* Drop zone */
 
-  .drop_zone {
-    margin: -80px 40px -120px 40px;
+  .border img {
+    width: 120px;
   }
 
-  .drop_zone img {
-    max-width: 160px;
+  #image-display {
+    width: 45%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  /* Error message */
+
+  .error {
+    width: 500px;
+    height: 430px;
+    gap: 25px;
+    margin: 0 auto;
+  }
+
+  .error_header {
+    font-size: 23px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 18px;
+    line-height: 35px;
+  }
+
+  .ok_button {
+    font-size: 18px;
+    line-height: 39px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 18px;
+    line-height: 24px;
+    width: 200px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -679,7 +884,7 @@ footer button {
 
   /* Reviews */
 
-  h2 {
+  .reviews_header {
     font-size: 28px;
     margin-bottom: 50px;
   }
@@ -878,10 +1083,6 @@ footer button {
     top: 13px;
   }
 
-  header {
-    padding: 20px;
-  }
-
   .logo img {
     width: 80px;
   }
@@ -890,18 +1091,27 @@ footer button {
     font-size: 20px;
   }
 
+  .language_selection span {
+    font-size: 12px;
+  }
+
   .user_authentication {
-    margin-left: 80px;
+    margin-left: 93px;
     margin-top: 5px;
   }
 
   .user_authentication a {
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    white-space: nowrap;
   }
 
   .avatar_background {
+    margin-left: -30px;
+  }
+
+  .avatar_background a {
     width: 35px;
     height: 35px;
   }
@@ -940,17 +1150,59 @@ footer button {
 
   /* Drop zone */
 
-  .drop_zone {
-    margin: -110px 50px -150px 40px;
+  .border img {
+    width: 100px;
   }
 
-  .drop_zone img {
-    max-width: 80px;
-    margin: 0;
+  #image-display {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
   }
 
-  .drop_zone p {
-    font-size: 10px;
+  .border p {
+    font-size: 18px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+    margin-top: 20px;
+  }
+
+  /* Error message */
+
+  .error {
+    width: 450px;
+    height: 400px;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  .error_header {
+    font-size: 20px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 16px;
+    line-height: 33px;
+  }
+
+  .ok_button {
+    font-size: 16px;
+    line-height: 39px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 16px;
+    line-height: 24px;
+    width: 200px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -980,7 +1232,7 @@ footer button {
 
   /* Reviews */
 
-  h2 {
+  .reviews_header {
     font-size: 25px;
     margin-bottom: 50px;
   }
@@ -1106,17 +1358,59 @@ footer button {
 
   /* Drop zone */
 
-  .drop_zone {
-    margin: -110px 50px -150px 40px;
+  .border img {
+    width: 100px;
   }
 
-  .drop_zone img {
-    max-width: 80px;
-    margin: 0;
+  #image-display {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
   }
 
-  .drop_zone p {
-    font-size: 10px;
+  .border p {
+    font-size: 16px;
+    line-height: 0%;
+    letter-spacing: 0;
+    margin-top: 20px;
+  }
+
+  /* Error message */
+
+  .error {
+    width: 400px;
+    height: 370px;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  .error_header {
+    font-size: 18px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .ok_button {
+    font-size: 14px;
+    line-height: 39px;
+    width: 80px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 14px;
+    line-height: 24px;
+    width: 180px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -1146,7 +1440,7 @@ footer button {
 
   /* Reviews */
 
-  h2 {
+  .reviews_header {
     font-size: 25px;
     margin-bottom: 50px;
   }
@@ -1273,21 +1567,59 @@ footer button {
 
   /* Drop zone */
 
-  .drop_zone {
-    margin: -100px 40px -220px 80px;
-    margin-top: -150px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: -190px;
+  .border img {
+    width: 75px;
   }
 
-  .drop_zone img {
-    max-width: 50px;
-    margin: 0;
+  #image-display {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
   }
 
-  .drop_zone p {
-    font-size: 10px;
+  .border p {
+    font-size: 14px;
+    line-height: 0%;
+    letter-spacing: 0;
+    margin-top: 20px;
+  }
+
+  /* Error message */
+
+  .error {
+    width: 320px;
+    height: 340px;
+    gap: 22px;
+    margin: 0 auto;
+  }
+
+  .error_header {
+    font-size: 17px;
+    line-height: 0%;
+    letter-spacing: 0.395em;
+  }
+
+  .error p {
+    font-size: 13px;
+    line-height: 25px;
+  }
+
+  .ok_button {
+    font-size: 13px;
+    line-height: 39px;
+    width: 60px;
+    height: 40px;
+  }
+
+  .support_button {
+    font-size: 14px;
+    line-height: 24px;
+    width: 160px;
+    height: 40px;
   }
 
   /* Section About Us */
@@ -1321,7 +1653,7 @@ footer button {
 
   /* Reviews */
 
-  h2 {
+  .reviews_header {
     font-size: 22px;
   }
 
