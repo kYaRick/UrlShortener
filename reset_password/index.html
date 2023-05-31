@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Page</title>
-  <link rel="stylesheet" href="../style/login.css" />
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="../style/reset_password.css" />
   <link rel="icon" href="../image/logo.svg" />
 </head>
 
@@ -15,7 +15,8 @@
   <header>
     <div class="logo">
       <a href="../index.html" class="link_to_the_main_page">
-        <img src="../image/logo.svg" alt="Logo" /> Cut url
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
       </a>
     </div>
     <div class="hamburger_menu">
@@ -34,7 +35,7 @@
       <div class="user_authentication">
         <a href="../login/index.html" data-lang="login">Log in</a>
         <img src="../image/vertical_line.svg" alt="Vertical line" />
-        <a href="../registration/index.html">Registration</a>
+        <a href="../registration/index.html" data-lang="registration">Registration</a>
         <div class="avatar_background">
           <a href="../user_cabinet/index.html"><img src="../image/avatar.svg" alt="Avatar" /></a>
         </div>
@@ -42,43 +43,43 @@
     </nav>
   </header>
 
-  <!-- Login form -->
-  <section class="login_section">
-    <div>
-      <h1 class="login_header" data-lang="login_header">
-        Log in to <br />
-        your account
-      </h1>
-    </div>
-    <div>
-      <form action="/submit_form" method="post">
-        <div class="input-container">
-          <label for="username" data-lang="username">Short name or e-mail:</label>
-          <input type="text" id="username" name="username" />
+  <!-- Reset password -->
+  <section class="reset_password">
+    <h1 class="reset_password_header">Reset Password</h1>
+
+    <form>
+      <div class="input_wrapper">
+        <div>
+          <label for="actual-password">Actual Password:</label>
+          <input type="password" id="actual-password" name="actual-password" />
         </div>
-        <div class="input-container">
-          <label for="password" data-lang="password">Password:</label>
-          <input type="password" id="password" name="password" />
-          <a href="../forgot_password/index.html">Forgot password?</a>
+      </div>
+
+      <div class="input_wrapper">
+        <div>
+          <label for="new-password">New Password:</label>
+          <input type="password" id="new-password" name="new-password" />
         </div>
-        <div class="button-container">
-          <input type="submit" value="Sign in" data-lang="Sign_in" />
-          <button type="button" onclick="location.href=''">
-            <img src="../image/google_icon.svg" alt="Google icon" />
-          </button>
+        <div>
+          <label for="repeat-new-password">Repeat New Password:</label>
+          <input type="password" id="repeat-new-password" name="repeat-new-password" />
         </div>
-      </form>
-    </div>
-    <div class="link_icon">
-      <img src="../image/link_icon.svg" alt="Link icon" />
-    </div>
+      </div>
+
+      <div class="input_wrapper">
+        <div>
+          <input type="submit" value="Save Changes" />
+        </div>
+      </div>
+    </form>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer_logo">
       <a href="../index.html" class="link_to_the_main_page">
-        <img src="../image/logo.svg" alt="Logo" />Cut url
+        <img src="../image/logo.svg" alt="Logo" />
+        Cut url
       </a>
     </div>
     <div>
@@ -88,6 +89,7 @@
       <img src="../image/question_mark.svg" alt="Question mark" />
     </div>
   </footer>
+
   <script src="../code/menu.js"></script>
   <script src="../code/language_selection.js"></script>
 </body>

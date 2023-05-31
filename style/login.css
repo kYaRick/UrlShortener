@@ -111,8 +111,21 @@ body {
   cursor: pointer;
 }
 
-.login_section .scissors img {
-  width: 850px;
+.login_section .link_icon img {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.input-container a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 35px;
+  margin-top: -40px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -122,6 +135,13 @@ body {
 
   .login_section label {
     font-size: 29px;
+  }
+
+  .input-container a {
+    font-size: 29px;
+    line-height: 39px;
+    margin-left: 35px;
+    margin-top: -40px;
   }
 
   .login_section input {
@@ -150,18 +170,25 @@ body {
     height: 80px;
   }
 
-  .login_section .scissors img {
-    width: 830px;
+  .login_section .link_icon img {
+    width: 380px;
   }
 }
 
 @media screen and (max-width: 992px) {
   .login_header {
-    font-size: 403px;
+    font-size: 43px;
   }
 
   .login_section label {
     font-size: 29px;
+  }
+
+  .input-container a {
+    font-size: 29px;
+    line-height: 39px;
+    margin-left: 35px;
+    margin-top: -40px;
   }
 
   .login_section input {
@@ -194,8 +221,8 @@ body {
     width: 40px;
   }
 
-  .login_section .scissors img {
-    width: 500px;
+  .login_section .link_icon img {
+    width: 350px;
   }
 }
 
@@ -206,6 +233,13 @@ body {
 
   .login_section label {
     font-size: 26px;
+  }
+
+  .input-container a {
+    font-size: 26px;
+    line-height: 39px;
+    margin-left: 35px;
+    margin-top: -40px;
   }
 
   .login_section input {
@@ -241,6 +275,10 @@ body {
   .login_section .scissors img {
     width: 500px;
   }
+
+  .login_section .link_icon img {
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -252,6 +290,13 @@ body {
 
   .login_section label {
     font-size: 24px;
+  }
+
+  .input-container a {
+    font-size: 24px;
+    line-height: 39px;
+    margin-left: 35px;
+    margin-top: -27px;
   }
 
   .login_section input {
@@ -286,8 +331,8 @@ body {
     width: 36px;
   }
 
-  .login_section .scissors img {
-    width: 400px;
+  .login_section .link_icon img {
+    width: 250px;
   }
 }
 
@@ -306,6 +351,13 @@ body {
     font-size: 19px;
     margin: 0;
     margin-left: 20px;
+  }
+
+  .input-container a {
+    font-size: 19px;
+    line-height: 39px;
+    margin-left: 20px;
+    margin-top: -20px;
   }
 
   .login_section input {
@@ -339,8 +391,8 @@ body {
     width: 27px;
   }
 
-  .login_section .scissors img {
-    width: 300px;
+  .login_section .link_icon img {
+    width: 200px;
     margin-bottom: 20px;
   }
 }
