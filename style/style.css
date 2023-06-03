@@ -525,13 +525,16 @@ footer button {
   margin-right: 10px;
 }
 
-.background_question_mark {
+.background_question_mark a {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: #636363;
   cursor: pointer;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Media queries */
@@ -649,7 +652,7 @@ footer button {
     margin-right: 10px;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 60px;
     height: 60px;
     margin-right: 10px;
@@ -772,7 +775,7 @@ footer button {
     margin-right: 10px;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 60px;
     height: 60px;
     margin-right: 10px;
@@ -951,7 +954,7 @@ footer button {
     margin-right: 10px;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 55px;
     height: 55px;
     margin-right: 10px;
@@ -1301,7 +1304,7 @@ footer button {
     margin-right: 10px;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -1510,7 +1513,7 @@ footer button {
     letter-spacing: 0.1em;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 47px;
     height: 47px;
     margin-right: 10px;
@@ -1723,7 +1726,7 @@ footer button {
     line-height: 0%;
   }
 
-  .background_question_mark {
+  .background_question_mark a {
     width: 41px;
     height: 41px;
     margin-right: 10px;
