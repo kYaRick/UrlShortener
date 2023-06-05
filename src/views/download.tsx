@@ -23,34 +23,43 @@ import FileService from "../services/file";
 import toast from "../util/toast";
 
 export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  
   const [, setView] = useViewController();
-
   const [wordCode, setWordCode] = useState<string>("");
+  const [openFileState, openFileFn] = useAsyncFn(
+    async function openFile(wordCode: string) 
+    {
+      
+      openFileState.error = undefined;
+      let exists;
 
-  const [openFileState, openFileFn] = useAsyncFn(async function openFile(wordCode: string) {
-    openFileState.error = undefined;
+      try
+      {
+        exists = await FileService.I.doesExist(wordCode);
+      } 
+      catch (e) 
+      {
+        ErrorHandlingService.I.notifyUserOfError("Error checking for file existance", e);
+        return;
+      }
 
-    let exists;
-    try {
-      exists = await FileService.I.doesExist(wordCode);
-    } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Error checking for file existance", e);
-      return;
+      if (exists) 
+      {
+        await setView({ slug: "file", params: { wordCode } });
+        setWordCode("");
+      } 
+      else 
+      {
+        toast({
+          title: "This file doesn't exist",
+          status: "error",
+          duration: undefined,
+          isClosable: true,
+        });
+        throw new Error();
+      }
     }
-
-    if (exists) {
-      await setView({ slug: "file", params: { wordCode } });
-      setWordCode("");
-    } else {
-      toast({
-        title: "This file doesn't exist",
-        status: "error",
-        duration: undefined,
-        isClosable: true,
-      });
-      throw new Error();
-    }
-  });
+  );
 
   const _onClose = () => {
     onClose();
