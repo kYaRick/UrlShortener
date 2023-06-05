@@ -7,10 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-lang="Cut_URL">Cut URL</title>
   <link rel="stylesheet" href="./style/style.css" />
+  <link rel="stylesheet" href="./style/loader.css" />
   <link rel="icon" href="./image/logo.svg" />
 </head>
 
 <body>
+  <!-- Loader -->
+  <section class="loader">
+    <div class="book">
+      <div class="book__pg-shadow"></div>
+      <div class="book__pg"></div>
+      <div class="book__pg book__pg--2"></div>
+      <div class="book__pg book__pg--3"></div>
+      <div class="book__pg book__pg--4"></div>
+      <div class="book__pg book__pg--5"></div>
+    </div>
+  </section>
+
   <!-- Menu -->
   <header>
     <div class="logo">
@@ -191,9 +204,11 @@
     </div>
   </footer>
 
+  <!-- JS files -->
   <script src="./code/menu.js"></script>
   <script src="./code/drop_zone.js"></script>
   <script src="./code/comments.js"></script>
+  <script src="./code/loader.js"></script>
   <script src="./code/language_selection.js"></script>
 </body>
 
