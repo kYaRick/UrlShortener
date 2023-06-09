@@ -80,6 +80,6 @@ ok_button.addEventListener("click", () => {
 });
 
 support_button.addEventListener("click", () => {
-  window.open("https://www.google.com", "_blank");
+  window.open("../support_page/index.html", "_blank");
   error.classList.add("hidden");
 });

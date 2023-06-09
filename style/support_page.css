@@ -1,0 +1,522 @@
+@import url("style.css");
+
+body {
+  background: #c7e0f1;
+}
+
+.support_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  margin: 40px 40px;
+}
+
+.header_suport {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 117px;
+  color: #000000;
+  margin: 0;
+}
+
+.support_section form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.message {
+  background: #ffffff;
+  border-radius: 107px;
+  border: 2px solid #ccc;
+  padding: 40px 50px;
+}
+
+.message p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: justify;
+  color: #000000;
+}
+
+.subject {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+.support_section label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.subject input {
+  width: 700px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 25px;
+  border: 2px solid #ccc;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+  padding-left: 20px;
+}
+
+.description label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.button,
+.tick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.button {
+  width: 200px;
+  height: 60px;
+  background: dodgerblue;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.67, 0.17, 0.4, 0.83);
+}
+
+.button svg {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+.button__circle {
+  width: 100px;
+  height: 100px;
+  background: mediumseagreen;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.tick {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 39px;
+  text-align: center;
+  color: #ffffff;
+  transition: all 0.9s;
+}
+
+/* Media queries */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 39px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 40px 50px;
+  }
+
+  .message p {
+    font-size: 19px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 23px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 700px;
+    height: 70px;
+    font-size: 21px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 23px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 200px;
+    height: 60px;
+  }
+
+  .button__circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tick {
+    font-size: 23px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 38px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 40px 50px;
+  }
+
+  .message p {
+    font-size: 18px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 700px;
+    height: 70px;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 200px;
+    height: 60px;
+  }
+
+  .button__circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tick {
+    font-size: 22px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 38px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 40px 50px;
+    border-radius: 60px;
+  }
+
+  .message p {
+    font-size: 18px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 700px;
+    height: 70px;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 200px;
+    height: 60px;
+  }
+
+  .button__circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tick {
+    font-size: 22px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 37px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 40px 50px;
+    border-radius: 60px;
+  }
+
+  .message p {
+    font-size: 17px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 21px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 550px;
+    height: 70px;
+    font-size: 19px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 21px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 160px;
+    height: 50px;
+  }
+
+  .button__circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tick {
+    font-size: 21px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 36px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 40px 50px;
+    border-radius: 60px;
+  }
+
+  .message p {
+    font-size: 16px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 500px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 150px;
+    height: 50px;
+  }
+
+  .button__circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tick {
+    font-size: 20px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .support_section {
+    margin: 40px 40px;
+  }
+
+  .header_suport {
+    font-size: 34px;
+    line-height: 117px;
+    margin: 0;
+  }
+
+  .support_section form {
+    gap: 30px;
+  }
+
+  .message {
+    padding: 30px 40px;
+    border-radius: 50px;
+  }
+
+  .message p {
+    font-size: 15px;
+  }
+
+  .subject {
+    margin-left: 20px;
+  }
+
+  .support_section label {
+    font-size: 19px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  .subject input {
+    width: 300px;
+    height: 50px;
+    font-size: 17px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .description label {
+    font-size: 19px;
+    line-height: 30px;
+  }
+
+  .button {
+    width: 130px;
+    height: 40px;
+  }
+
+  .button__circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tick {
+    font-size: 19px;
+    line-height: 39px;
+  }
+}

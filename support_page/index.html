@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang="support_page">Support Page</title>
+    <link rel="stylesheet" href="../style/support_page.css" />
+    <link rel="icon" href="../image/logo.svg" />
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <header>
+      <div class="logo">
+        <a href="../index.html" class="link_to_the_main_page">
+          <img src="../image/logo.svg" alt="Logo" /> Cut url
+        </a>
+      </div>
+      <div class="hamburger_menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <div class="language_selection">
+          <span class="ukr-selector" data-lang="ukr">UKR</span>
+          <img
+            src="../image/Ukrainian_flag.svg"
+            alt="Ukrainian flag"
+            class="ukr-selector"
+          />
+          <img src="../image/vertical_line.svg" alt="Vertical line" />
+          <img
+            src="../image/USA_flag.svg"
+            alt="USA flag"
+            class="eng-selector"
+          />
+          <span class="eng-selector" data-lang="eng">ENG</span>
+        </div>
+        <div class="user_authentication">
+          <a href="../login/index.html" data-lang="login">Log in</a>
+          <img src="../image/vertical_line.svg" alt="Vertical line" />
+          <a href="../registration/index.html">Registration</a>
+          <div class="avatar_background">
+            <a href="../user_cabinet/index.html"
+              ><img src="../image/avatar.svg" alt="Avatar"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Support page -->
+    <section class="support_section">
+      <h1 class="header_suport" data-lang="support_page">Support page</h1>
+      <form>
+        <div class="message">
+          <p data-lang="message"> 
+            Hi! <br />
+            <br />
+            Welcome to our support page! Our team of link-loving experts is here
+            to help you with any questions or issues you may have. Whether
+            you're experiencing a technical glitch, want to suggest a new
+            feature, or just need a little guidance, we're always happy to lend
+            a hand. So don't be shy, drop us a line and let us know how we can
+            assist you on your link shortening journey!
+          </p>
+        </div>
+        <div class="subject">
+          <label for="subject" data-lang="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
+        </div>
+        <div class="description">
+          <label data-lang="description">Description</label>
+          <textarea id="mytextarea"></textarea>
+        </div>
+        <div class="button">
+          <div class="container">
+            <div class="tick"></div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer_logo">
+        <a href="../index.html" class="link_to_the_main_page">
+          <img src="../image/logo.svg" alt="Logo" />Cut url
+        </a>
+      </div>
+      <div>
+        <button data-lang="write_to_support">write to support</button>
+      </div>
+      <div class="background_question_mark">
+        <a href="../404/index.html"
+          ><img src="../image/question_mark.svg" alt="Question mark"
+        /></a>
+      </div>
+    </footer>
+
+    <script src="../code/menu.js"></script>
+    <script src="../code/language_selection.js"></script>
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script src="../code/support_page.js"></script>
+  </body>
+</html>
