@@ -76,6 +76,23 @@
         "btn_download_file": "Download file",
         "btn_open_file": "Open file"
     },
+    "upload":
+    {
+        "window_title": "Upload file",
+        "att_size" : "File must be under 20MB",
+        "att_uploaded": "File uploaded!",
+        "att_uploaded_desc": "Your file was successfully uploaded.",
+        "err_uploading": "Error uploading file",
+        "btn_upload": "Upload"
+    },
+    "server":
+    {
+
+    },
+    "file":
+    {
+
+    },
     "footer":
     {
         "signature":"made with ❤️ to 🇺🇦 by ",
