@@ -14,6 +14,7 @@ import FirebaseService from "./services/firebase";
 import "./util/base.css";
 import theme from "./util/theme";
 import React from "react";
+import { useTranslation, Trans } from 'react-i18next';
 
 function App() {
   const setupState = useAsync(async () => {
@@ -37,12 +38,18 @@ function App() {
     <ViewControllerProvider>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider resetCSS theme={extendTheme(theme)}>
-        {(setupState.loading || setupState.error) && <LoaderScreen /> && <Members/>}
-        <VStack justify={"stretch"} h={"full"} w={"full"}>
-          <Navbar />
-          <Hero />
-          <Footer />
-        </VStack>
+        {(setupState.loading || setupState.error) ? (
+          <>
+            <LoaderScreen />
+            <Members />
+          </>
+        ) : (
+          <VStack justify="stretch" h="full" w="full">
+            <Navbar />
+            <Hero />
+            <Footer />
+          </VStack>
+        )}
         {!!userId && <ViewController />}
       </ChakraProvider>
     </ViewControllerProvider>

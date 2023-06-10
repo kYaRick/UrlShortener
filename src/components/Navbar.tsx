@@ -20,6 +20,8 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
+import { useTranslation } from "react-i18next";
+
 import { useViewController } from "../ViewController";
 import { LogoColor } from "./icons/logo-color";
 import { LogoWhite } from "./icons/logo-white";
@@ -30,6 +32,7 @@ import { UserIcon } from "./icons/user";
 import { useState } from "react";
 
 const LngSwitch = ({ colorMode }) => {
+  const { i18n } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseOver = () => {
@@ -42,9 +45,14 @@ const LngSwitch = ({ colorMode }) => {
     // Additional logic or state updates on mouse leave
   };
 
+  const toggleLanguage = () => {
+    const currentLanguage = i18n.language;
+    const newLanguage = currentLanguage === "en" ? "uk" : "en";
+    i18n.changeLanguage(newLanguage);
+  };
+
   return (
     <Popover>
-
       <PopoverTrigger>
         <span>
           <div
@@ -55,28 +63,19 @@ const LngSwitch = ({ colorMode }) => {
             <Switch
               id="isUkraineLang"
               colorScheme={{ light: "violet", dark: "purple" }[colorMode]}
-              isDisabled
+              onChange={toggleLanguage}
             />
           </div>
         </span>
       </PopoverTrigger>
-
-      <PopoverContent bg="tomato" color="white">
-        <PopoverHeader fontWeight="semibold">Support team:</PopoverHeader>
-        <PopoverArrow bg="pink.500" />
-        <PopoverCloseButton bg="purple.500" />
-        <PopoverBody>
-          We are at the stage of adding this functionality to the resource.<br />
-          Thank you for your understanding
-        </PopoverBody>
-      </PopoverContent>
-    </Popover >
+    </Popover>
   );
 };
 
 export const Navbar = () => {
   const [, setView] = useViewController();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { t, i18n } = useTranslation("navbar");
 
   return (
     <Box display={"flex"} h={20} w={"full"} px={{ base: 4, sm: 8 }} justifyContent={"space-between"} flexShrink={0}>
@@ -113,6 +112,8 @@ export const Navbar = () => {
         <Text>🇺🇸</Text>
         <LngSwitch colorMode={colorMode} />
         <Text paddingRight={"5"}>🇺🇦</Text>
+
+        <Text>{i18n.t('navbar.about')}</Text>
 
         <IconButton
           aria-label={"Toggle color mode"}
