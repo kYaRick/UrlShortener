@@ -12,8 +12,6 @@ import {
   ModalBody,
   ModalCloseButton,
   Stack,
-  Heading,
-  Image,
   useDisclosure,
   VStack,
   HStack,

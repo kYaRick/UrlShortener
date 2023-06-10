@@ -15,6 +15,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { useAsyncFn } from "react-use";
 
 import { useViewController } from "../ViewController";
@@ -23,7 +24,7 @@ import FileService from "../services/file";
 import toast from "../util/toast";
 
 export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  
+  const { i18n } = useTranslation();
   const [, setView] = useViewController();
   const [wordCode, setWordCode] = useState<string>("");
   const [openFileState, openFileFn] = useAsyncFn(
@@ -39,7 +40,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
       } 
       catch (e) 
       {
-        ErrorHandlingService.I.notifyUserOfError("Error checking for file existance", e);
+        ErrorHandlingService.I.notifyUserOfError(i18n.t("download.error_file_existance"), e);
         return;
       }
 
@@ -51,7 +52,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
       else 
       {
         toast({
-          title: "This file doesn't exist",
+          title: i18n.t("download.file_doesnt_exist"),
           status: "error",
           duration: undefined,
           isClosable: true,
@@ -74,7 +75,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
         <ModalOverlay />
         <ModalContent mx={3}>
           <ModalHeader>
-            <Heading fontSize={"xl"}>Download file</Heading>
+            <Heading fontSize={"xl"}>{i18n.t("download.btn_download_file")}</Heading>
           </ModalHeader>
           <ModalCloseButton onClick={_onClose} />
           <ModalBody>
@@ -85,10 +86,10 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
               }}
             >
               <FormControl id={"wordCode"} isInvalid={!!openFileState.error}>
-                <FormLabel>Word code</FormLabel>
+                <FormLabel>{i18n.t("download.word_code")}</FormLabel>
                 <Input
                   ref={initialRef as any}
-                  placeholder={"3-word unique code"}
+                  placeholder={i18n.t("download.unique_code")}
                   size={"lg"}
                   fontFamily={"heading"}
                   fontWeight={"medium"}
@@ -100,7 +101,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
                   }}
                   onSubmit={() => openFileFn(wordCode)}
                 />
-                <FormHelperText>Enter the word code that is displayed on the file information page.</FormHelperText>
+                <FormHelperText>{i18n.t("download.add_info")}</FormHelperText>
               </FormControl>
             </form>
           </ModalBody>
@@ -111,7 +112,7 @@ export default function DownloadView({ isOpen, onClose }: { isOpen: boolean; onC
               isDisabled={wordCode.split(" ").length !== 3}
               onClick={() => openFileFn(wordCode)}
             >
-              Open file
+              {i18n.t("download.btn_open_file")}
             </Button>
           </ModalFooter>
         </ModalContent>
