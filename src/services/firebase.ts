@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-
 import firebaseConfig from "../util/firebase-config";
 
 class FirebaseService {

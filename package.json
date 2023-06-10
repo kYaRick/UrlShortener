@@ -17,9 +17,13 @@
     "filepond-plugin-image-preview": "^4.6.11",
     "firebase": "^9.22.0",
     "framer-motion": "^4.1.17",
+    "i18next": "^22.5.1",
+    "i18next-browser-languagedetector": "^7.0.2",
+    "i18next-http-backend": "^2.2.1",
     "preact": "^10.5.13",
     "react-filepond": "^7.1.1",
     "react-helmet": "^6.1.0",
+    "react-i18next": "^12.3.1",
     "react-use": "^17.2.4",
     "rxjs": "^7.3.0"
   },
