@@ -9,19 +9,12 @@ import {
 
   Popover,
   PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
 
   useColorMode,
 } from "@chakra-ui/react";
 
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
 import { useViewController } from "../ViewController";
 import { LogoColor } from "./icons/logo-color";
 import { LogoWhite } from "./icons/logo-white";
@@ -29,7 +22,6 @@ import { MoonStarsIcon } from "./icons/moon-stars";
 import { ServerIcon } from "./icons/server";
 import { SunIcon } from "./icons/sun";
 import { UserIcon } from "./icons/user";
-import { useState } from "react";
 
 const LngSwitch = ({ colorMode }) => {
   const { i18n } = useTranslation();
@@ -73,15 +65,15 @@ const LngSwitch = ({ colorMode }) => {
 };
 
 export const Navbar = () => {
+  const { i18n } = useTranslation("navbar");
   const [, setView] = useViewController();
   const { colorMode, toggleColorMode } = useColorMode();
-  const { t, i18n } = useTranslation("navbar");
 
   return (
     <Box display={"flex"} h={20} w={"full"} px={{ base: 4, sm: 8 }} justifyContent={"space-between"} flexShrink={0}>
       <HStack>
         <IconButton
-          aria-label={"Toggle color mode"}
+          aria-label={i18n.t('navbar.tg_theme')}
           icon={
             <Box w={6}>
               <ServerIcon sx={{ strokeWidth: 2 }} />
@@ -90,7 +82,7 @@ export const Navbar = () => {
           onClick={() => setView({ slug: "server" })}
         />
         <IconButton
-          aria-label={"Manage account"}
+          aria-label={i18n.t('navbar.acc_manage')}
           icon={
             <Box w={6}>
               <UserIcon sx={{ strokeWidth: 2 }} />
@@ -113,10 +105,8 @@ export const Navbar = () => {
         <LngSwitch colorMode={colorMode} />
         <Text paddingRight={"5"}>🇺🇦</Text>
 
-        <Text>{i18n.t('navbar.about')}</Text>
-
         <IconButton
-          aria-label={"Toggle color mode"}
+          aria-label={i18n.t('navbar.tg_theme')}
           icon={
             <Box w={6}>
               {colorMode !== "dark" ? <SunIcon sx={{ strokeWidth: 2 }} /> : <MoonStarsIcon sx={{ strokeWidth: 2 }} />}

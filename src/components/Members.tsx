@@ -19,12 +19,14 @@ import {
   HStack,
 } from '@chakra-ui/react'
 
+import { useTranslation } from "react-i18next";
 import kya_ph from '../assets/authors/kYaRick.jpg'
 import anya_ph from '../assets/authors/Anya.jpg'
 import misha_ph from '../assets/authors/Misha.jpg'
 
 
 export const Members = () => {
+  const { i18n } = useTranslation("members");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const OverlayOne = () => (
@@ -60,11 +62,11 @@ export const Members = () => {
                 <HStack>
                   <Avatar name="Anna Babiak" src={anya_ph} size="2xl" />
                   <VStack align={"left"}>
-                    <Text as={"b"} color={"violet.600"} fontSize={"x-large"}>Anna Babiak</Text>
-                    <Text as={"u"} opacity={"40%"}>Position: Front End Developer, QA/QC Manual</Text>
+                    <Text as={"b"} color={"violet.600"} fontSize={"x-large"}>{i18n.t("members.anya_title")}</Text>
+                    <Text as={"u"} opacity={"40%"}>{i18n.t("members.position")}: Front End Developer, QA/QC Manual</Text>
                   </VStack>
                 </HStack>
-                <Text>Meet Anny Babiak 👩‍💻, our talented and dedicated front-end developer with a flair for quality control. 🌟 With expertise in web design and a keen eye for detail, Anny ensures that our projects meet the highest standards of excellence. 💯 She not only excels in coding and UI/UX implementation but also takes on the responsibility of technical support during the creation and design process. 🛠️ Anny brings a unique perspective to our team, combining her creativity with her strong problem-solving skills to deliver outstanding results. 🚀 With her passion for innovation and commitment to customer satisfaction, Anny plays a vital role in creating seamless and visually appealing user experiences. ✨💻</Text>
+                <Text>{i18n.t("members.anya_description")}</Text>
               </Stack>
 
               <Stack shadow={"md"} padding={"5"}>
