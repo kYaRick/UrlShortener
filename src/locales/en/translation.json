@@ -66,6 +66,16 @@
         "choose": "Choose a sign-in method",
         "sign_out": "Sign Out"
     },
+    "download":
+    {
+        "word_code": "Word code",
+        "unique_code": "3-word unique code",
+        "file_doesnt_exist": "This file doesn't exist",
+        "error_file_existance": "Error checking for file existance",
+        "add_info": "Enter the word code that is displayed on the file information page.",
+        "btn_download_file": "Download file",
+        "btn_open_file": "Open file"
+    },
     "footer":
     {
         "signature":"made with ❤️ to 🇺🇦 by ",
