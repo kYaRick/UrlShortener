@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "preact/compat";
 import { useState } from "preact/hooks";
-
 import {
   Button,
   Heading,
@@ -12,6 +11,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { registerPlugin } from "filepond";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
@@ -27,7 +27,7 @@ registerPlugin(FilePondPluginImagePreview);
 
 export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [, setView] = useViewController();
-
+  const { i18n } = useTranslation();
   const [files, setFiles] = useState<File[]>([]);
 
   const _onClose = () => {
@@ -39,7 +39,7 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
     // reject files >20MB
     if ((file.size || 0) > 20 * 1024 * 1024) {
       toast({
-        title: "File must be under 20MB",
+        title: i18n.t("upload.att_size"),
         status: "error",
         isClosable: true,
       });
@@ -49,15 +49,15 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
     try {
       const wordCode = await FileService.I.upload(file);
       toast({
-        title: "File uploaded!",
-        description: "Your file was successfully uploaded.",
+        title: i18n.t("upload.att_uploaded"),
+        description: i18n.t("upload.att_uploaded_desc"),
         status: "success",
         isClosable: true,
       });
       setView({ slug: "file", params: { wordCode } });
       setFiles([]);
     } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Error uploading file", e);
+      ErrorHandlingService.I.notifyUserOfError(i18n.t("upload.err_uploading"), e);
     }
   });
 
@@ -67,7 +67,7 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
         <ModalOverlay />
         <ModalContent mx={3}>
           <ModalHeader>
-            <Heading fontSize={"xl"}>Upload file</Heading>
+            <Heading fontSize={"xl"}>{i18n.t("upload.window_title")}</Heading>
           </ModalHeader>
           <ModalCloseButton onClick={_onClose} />
           <ModalBody>
@@ -91,7 +91,7 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
               isLoading={uploadFileState.loading}
               onClick={() => uploadFileFn(files[0])}
             >
-              Upload
+              {i18n.t("upload.btn_upload")}
             </Button>
           </ModalFooter>
         </ModalContent>
