@@ -21,6 +21,7 @@ import {
   Popover,
 } from "@chakra-ui/react";
 
+import { useTranslation } from "react-i18next";
 import { LinkIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 
 import { useViewController } from "../ViewController";
@@ -29,6 +30,7 @@ import { UploadIcon } from "./icons/upload";
 import { useState } from "preact/hooks";
 
 const UrlField = ({ colorMode }) => {
+  const { i18n } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseOver = () => {
@@ -58,7 +60,7 @@ const UrlField = ({ colorMode }) => {
                 <InputLeftAddon children={<LinkIcon />} />
                 <Input
                   focusBorderColor={"violet.400"}
-                  placeholder="Enter URL"
+                  placeholder={i18n.t("hero.url_textbox")}
                   type="url" />
               </InputGroup>
               <IconButton aria-label='Short link' colorScheme={"violet"}>
@@ -70,12 +72,16 @@ const UrlField = ({ colorMode }) => {
       </PopoverTrigger>
 
       <PopoverContent bg="tomato" color="white">
-        <PopoverHeader fontWeight="semibold">Support team:</PopoverHeader>
+        <PopoverHeader fontWeight="semibold">
+          {i18n.t("hero.url_attention.title")}
+        </PopoverHeader>
         <PopoverArrow bg="pink.500" />
         <PopoverCloseButton bg="purple.500" />
         <PopoverBody>
-          We are at the stage of adding this functionality to the resource.<br />
-          Thank you for your understanding
+          {i18n.t("hero.url_attention.f_line")} 
+          <br/>
+          <br/>
+          {i18n.t("hero.url_attention.s_line")}
         </PopoverBody>
       </PopoverContent>
     </Popover >
@@ -83,6 +89,7 @@ const UrlField = ({ colorMode }) => {
 };
 
 export const Hero: React.FC = () => {
+  const { i18n } = useTranslation();
   const [, setView] = useViewController();
   const { colorMode } = useColorMode();
 
@@ -96,7 +103,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"10%"}
           style={{ filter: "blur(1px)" }}>
-          Your Linking Companion for a Smoother Online Experience!
+            {i18n.t("hero.mottos.pre_m1")}
         </Heading>
 
         <Heading
@@ -105,7 +112,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"20%"}
           style={{ filter: "blur(1.5px)" }}>
-          Smart Links for Modern Connections and Growth!
+          {i18n.t("hero.mottos.pre_m2")}
         </Heading>
 
         <Heading
@@ -115,7 +122,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"30%"}
           style={{ filter: "blur(2px)" }}>
-          Unleash the Power of Shortened Links!
+          {i18n.t("hero.mottos.pre_m3")}
         </Heading>
 
         <Heading
@@ -128,11 +135,15 @@ export const Hero: React.FC = () => {
         </Heading>
         <Heading as={"h2"} fontSize={"3xl"} fontWeight={"normal"} textAlign={"center"}>
           <Text as={"span"} color={"blue.400"} fontWeight={"medium"}>
-            Simplify 🚀
+            {i18n.t("hero.signatures.simplify")} 
+            🚀
           </Text>
-          Share {" "}
+            {" "}
+            {i18n.t("hero.signatures.share")}
+            {" "}
           <Text as={"span"} color={"yellow.400"} fontWeight={"medium"}>
-            🛡️ Secure
+            🛡️ 
+            {i18n.t("hero.signatures.secure")}
           </Text>
         </Heading>
         
@@ -146,9 +157,8 @@ export const Hero: React.FC = () => {
             </Box>}
             colorScheme={{ light: "violet", dark: "purple" }[colorMode]}
             shadow={"md"}
-            onClick={() => setView({ slug: "upload" })}
-          >
-            Share new file
+            onClick={() => setView({ slug: "upload" })}>
+            {i18n.t("hero.buttons.btn_share")}
           </Button>
           <Button
             size={"lg"}
@@ -157,9 +167,8 @@ export const Hero: React.FC = () => {
             </Box>}
             colorScheme={{ light: "violet", dark: "purple" }[colorMode]}
             shadow={"md"}
-            onClick={() => setView({ slug: "download" })}
-          >
-            Download file
+            onClick={() => setView({ slug: "download" })}>
+            {i18n.t("hero.buttons.btn_download")}
           </Button>
         </Stack>
 
@@ -170,7 +179,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"30%"}
           style={{ filter: "blur(2px)" }}>
-          Seamlessly Share and Store Your Content!
+          {i18n.t("hero.mottos.pos_m1")}
         </Heading>
 
         <Heading
@@ -179,7 +188,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"20%"}
           style={{ filter: "blur(1.5px)" }}>
-          Unlock the Potential of Link Management and File Sharing!
+          {i18n.t("hero.mottos.pos_m2")}
         </Heading>
 
         <Heading
@@ -188,7 +197,7 @@ export const Hero: React.FC = () => {
           fontWeight={"normal"}
           opacity={"10%"}
           style={{ filter: "blur(1px)" }}>
-          Empower Your Links, Enhance Your Workflow!
+          {i18n.t("hero.mottos.pos_m3")}
         </Heading>
 
       </VStack>

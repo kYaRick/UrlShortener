@@ -1,6 +1,44 @@
 {
     "navbar": {
         "home": "Home",
-        "about": "About"
+        "about": "About",
+        "acc_manage": "Manage account",
+        "tg_theme": "Toggle color mode"
+    },
+    "hero":
+    {
+        "url_textbox":"Enter URL",
+        "url_attention":
+        {
+            "title": "Support team",
+            "f_line":"We are at the stage of adding this functionality to the resource.",
+            "s_line":"Thank you for your understanding"
+        },
+        "signatures":
+        {
+            "simplify":"Simplify",
+            "share":"Share",
+            "secure":"Secure"
+        },
+        "mottos":
+        {
+            "pre_m1":"Your Linking Companion for a Smoother Online Experience!",
+            "pre_m2":"Smart Links for Modern Connections and Growth!",
+            "pre_m3":"Unleash the Power of Shortened Links!",
+            "pos_m1":"Seamlessly Share and Store Your Content!",
+            "pos_m2":"Unlock the Potential of Link Management and File Sharing!",
+            "pos_m3":"Empower Your Links, Enhance Your Workflow!"
+        },
+        "buttons":
+        {
+            "btn_share":"Share new file",
+            "btn_download":"Download file"
+        }
+    },
+    "members": {
+        "position": "Position",
+
+        "anya_title": "Anna Babiak",
+        "anya_description": "Meet Anny Babiak 👩‍💻, our talented and dedicated front-end developer with a flair for quality control. 🌟 With expertise in web design and a keen eye for detail, Anny ensures that our projects meet the highest standards of excellence. 💯 She not only excels in coding and UI/UX implementation but also takes on the responsibility of technical support during the creation and design process. 🛠️ Anny brings a unique perspective to our team, combining her creativity with her strong problem-solving skills to deliver outstanding results. 🚀 With her passion for innovation and commitment to customer satisfaction, Anny plays a vital role in creating seamless and visually appealing user experiences. ✨"
     }
 }
