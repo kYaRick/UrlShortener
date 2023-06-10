@@ -36,10 +36,29 @@
         }
     },
     "members": {
+        "window_title":"Our team",
         "position": "Position",
 
         "anya_title": "Anna Babiak",
-        "anya_description": "Meet Anny Babiak 👩‍💻, our talented and dedicated front-end developer with a flair for quality control. 🌟 With expertise in web design and a keen eye for detail, Anny ensures that our projects meet the highest standards of excellence. 💯 She not only excels in coding and UI/UX implementation but also takes on the responsibility of technical support during the creation and design process. 🛠️ Anny brings a unique perspective to our team, combining her creativity with her strong problem-solving skills to deliver outstanding results. 🚀 With her passion for innovation and commitment to customer satisfaction, Anny plays a vital role in creating seamless and visually appealing user experiences. ✨"
+        "anya_description": "Meet Anny Babiak 👩‍💻, our talented and dedicated front-end developer with a flair for quality control. 🌟 With expertise in web design and a keen eye for detail, Anny ensures that our projects meet the highest standards of excellence. 💯 She not only excels in coding and UI/UX implementation but also takes on the responsibility of technical support during the creation and design process. 🛠️ Anny brings a unique perspective to our team, combining her creativity with her strong problem-solving skills to deliver outstanding results. 🚀 With her passion for innovation and commitment to customer satisfaction, Anny plays a vital role in creating seamless and visually appealing user experiences. ✨",
+
+        "svyat_title":"Svyatoslav Bohatko",
+        "svyat_description":""
+    },
+    "host_file":
+    {
+        "file": "File",
+        "info": "View file info"
+    },
+    "auth":
+    {
+        "window_title": "Manage Account",
+        "sign_title": "Signed in as",
+        "sign_in": "Sign-in",
+        "success": "Successfully signed out!",
+        "fail":"Error signing out",
+        "choose": "Choose a sign-in method",
+        "sign_out": "Sign Out"
     },
     "footer":
     {
