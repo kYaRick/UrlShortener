@@ -6,10 +6,12 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-
+import { useTranslation } from "react-i18next";
 import { Members } from "./Members";
 
 export const Footer = () => {
+  const { i18n } = useTranslation();
+
   return (
     <VStack>
       <Stack
@@ -22,7 +24,7 @@ export const Footer = () => {
       >
         <HStack spacing={1}>
           <Text>
-            made with ❤️ to 🇺🇦 by{" "}
+            {i18n.t("footer.signature")}
             <Members />
           </Text>
         </HStack>
@@ -34,7 +36,7 @@ export const Footer = () => {
           isExternal
           opacity={0.8}
           _hover={{ opacity: 1, textDecoration: "underline" }}>
-          • Read about the project •
+          • {i18n.t("footer.more")} •
         </Link>
       </Stack>
     </VStack>

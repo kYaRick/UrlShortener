@@ -44,7 +44,7 @@ export const Members = () => {
         onOpen()
       }} isExternal>
         <Text as={"span"} fontWeight={"bold"}>
-          support team
+          {i18n.t("footer.support")}
         </Text>
       </Link>
 
