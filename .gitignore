@@ -1,8 +1,14 @@
 node_modules
 .DS_Store
 dist
+build
 dist-ssr
 *.local
+<<<<<<< HEAD
 .vite
 .idea
 build
+=======
+.idea
+_.env
+>>>>>>> 1fc3a11 (Deploy config was updated.)
