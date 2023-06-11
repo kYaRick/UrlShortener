@@ -83,11 +83,16 @@
         "att_uploaded": "File uploaded!",
         "att_uploaded_desc": "Your file was successfully uploaded.",
         "err_uploading": "Error uploading file",
-        "btn_upload": "Upload"
+        "btn_upload": "Upload",
+        "att_drag_drop_file": "Drag & Drop your files or Browse"
     },
     "server":
     {
-
+        "window_title":"Hosted files",
+        "text_sign_in":"Sign in",
+        "text_view_file":"to view hosted files",
+        "text_no_files":"No hosted files",
+        "err_load":"Error loading hosted files"
     },
     "file":
     {

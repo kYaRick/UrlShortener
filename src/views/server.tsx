@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from 'react';
 import { AsyncState } from "react-use/lib/useAsyncFn";
+import { useTranslation } from "react-i18next";
 
 import { useViewController } from "../ViewController";
 import { HostedFileItem } from "../components/HostedFileItem";
@@ -28,6 +29,11 @@ import FileService from "../services/file";
 import UserDataService from "../services/user-data";
 
 export default function ServerView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  
+  const { i18n } = useTranslation();
+  const initialRef = useRef();
+  const { colorMode } = useColorMode();
+  const [, setView] = useViewController();
   const [hostedFilesState, setHostedFilesState] = useState<AsyncState<[string, string][]>>({ loading: true });
 
   React.useEffect(
@@ -47,17 +53,12 @@ export default function ServerView({ isOpen, onClose }: { isOpen: boolean; onClo
           .then(files => setHostedFilesState({ loading: false, value: files }));
       } catch (e) {
         setHostedFilesState({ loading: false, error: e });
-        ErrorHandlingService.I.notifyUserOfError("Error loading hosted files", e);
+        ErrorHandlingService.I.notifyUserOfError(i18n.t("server.err_load"), e);
         onClose();
       }
     },
     [isOpen]
   );
-
-  const initialRef = useRef();
-
-  const { colorMode } = useColorMode();
-  const [, setView] = useViewController();
 
   return (
     <>
@@ -66,7 +67,7 @@ export default function ServerView({ isOpen, onClose }: { isOpen: boolean; onClo
         <DrawerContent>
           <DrawerCloseButton ref={initialRef as any} />
           <DrawerHeader>
-            <Heading fontSize={"xl"}>Hosted files</Heading>
+            <Heading fontSize={"xl"}>{i18n.t("server.window_title")}</Heading>
           </DrawerHeader>
           <DrawerBody pt={4}>
             <Stack spacing={4} minH={"full"}>
@@ -83,9 +84,9 @@ export default function ServerView({ isOpen, onClose }: { isOpen: boolean; onClo
                             color={`blue.${colorMode === "light" ? 500 : 400}`}
                             onClick={() => setView({ slug: "auth" })}
                           >
-                            Sign in
+                            {i18n.t("server.text_sign_in")}
                           </Link>{" "}
-                          to view hosted files
+                          {i18n.t("server.text_view_file")}
                         </Text>
                       </VStack>
                     </Flex>
@@ -99,7 +100,7 @@ export default function ServerView({ isOpen, onClose }: { isOpen: boolean; onClo
                           <FileMagnifyingGlassIcon sx={{ strokeWidth: 1.5 }} />
                         </Box>
                         <Text fontSize={"md"} fontWeight={"medium"} textAlign={"center"}>
-                          No hosted files
+                        {i18n.t("server.text_no_files")}
                         </Text>
                       </VStack>
                     </Flex>
