@@ -54,6 +54,7 @@ const LngSwitch = ({ colorMode }) => {
           >
             <Switch
               id="isUkraineLang"
+              defaultChecked
               colorScheme={{ light: "violet", dark: "purple" }[colorMode]}
               onChange={toggleLanguage}
             />
