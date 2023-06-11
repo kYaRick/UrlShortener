@@ -26,8 +26,8 @@ const FilePond = lazy(async () => (await import("react-filepond")).FilePond);
 registerPlugin(FilePondPluginImagePreview);
 
 export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [, setView] = useViewController();
   const { i18n } = useTranslation();
+  const [, setView] = useViewController();
   const [files, setFiles] = useState<File[]>([]);
 
   const _onClose = () => {
@@ -77,6 +77,8 @@ export default function UploadView({ isOpen, onClose }: { isOpen: boolean; onClo
                 files={files}
                 allowMultiple={false}
                 maxFiles={1}
+                lable={""}
+                labelIdle={i18n.t("upload.att_drag_drop_file")}
                 onupdatefiles={fileItems => {
                   const file = fileItems[0]?.file;
                   setFiles([file].filter(Boolean));
