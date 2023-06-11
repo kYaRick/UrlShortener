@@ -1,11 +1,8 @@
 {
-  "homepage": "http://kYaRick.github.io/UrlShortener",
   "name": "lighting-share-vite",
   "version": "0.0.0",
   "scripts": {
-    "predeploy": "npm run build && tsc && vite build",
     "dev": "vite",
-    "deploy": "gh-pages -d build",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
