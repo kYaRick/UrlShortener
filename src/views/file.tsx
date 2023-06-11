@@ -27,6 +27,7 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import copyToClipboard from "copy-to-clipboard";
 import { useAsync, useAsyncFn } from "react-use";
 
@@ -37,6 +38,7 @@ import FileService from "../services/file";
 import toast from "../util/toast";
 
 export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const { i18n } = useTranslation();
   const [view] = useViewController(),
     { wordCode } = view.params || {};
 
@@ -45,7 +47,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
     try {
       return await FileService.I.getInfo(wordCode);
     } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Error retrieving file information", e);
+      ErrorHandlingService.I.notifyUserOfError(i18n.t("file.err_load"), e);
       onClose();
     }
   }, [wordCode]);
@@ -57,7 +59,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
     try {
       await FileService.I.download(wordCode, filename);
     } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Error downloading file", e);
+      ErrorHandlingService.I.notifyUserOfError(i18n.t("file.err_download"), e);
     }
   });
 
@@ -68,7 +70,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
       closeRemoveModal();
       onClose();
     } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Error removing file", e);
+      ErrorHandlingService.I.notifyUserOfError(i18n.t("file.err_removing"), e);
     }
   });
 
@@ -76,13 +78,13 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
     try {
       copyToClipboard(wordCode);
       toast({
-        title: "Word code copied!",
+        title: i18n.t("file.att_wc_copied"),
         status: "success",
         duration: 2000,
         isClosable: true,
       });
     } catch (e) {
-      ErrorHandlingService.I.notifyUserOfError("Copying word code unsuccessful", e);
+      ErrorHandlingService.I.notifyUserOfError(i18n.t("file.att_wc_copied_unsuccess"), e);
     }
   }
 
@@ -95,44 +97,44 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth={"1px"}>
-            <Heading fontSize={"xl"}>File information</Heading>
+            <Heading fontSize={"xl"}>{i18n.t("file.file_info")}</Heading>
           </DrawerHeader>
 
           <DrawerBody pt={4}>
             <Stack spacing={4}>
               <Box>
-                <FormLabel htmlFor={"filename"}>Name</FormLabel>
+                <FormLabel htmlFor={"filename"}>{i18n.t("file.file_name")}</FormLabel>
                 <Input
                   value={fileState.value?.name || ""}
                   id={"filename"}
                   variant={fileState.loading ? "filled" : "outline"}
-                  placeholder={"Loading..."}
+                  placeholder={i18n.t("file.plh_load")}
                   isReadOnly
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor={"filetype"}>Filetype</FormLabel>
+                <FormLabel htmlFor={"filetype"}>{i18n.t("file.file_type")}</FormLabel>
                 <Input
                   value={fileState.value?.filetype || ""}
                   id={"filetype"}
                   variant={fileState.loading ? "filled" : "outline"}
-                  placeholder={"Loading..."}
+                  placeholder={i18n.t("file.plh_load")}
                   isReadOnly
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor={"uploadDate"}>Upload date</FormLabel>
+                <FormLabel htmlFor={"uploadDate"}>{i18n.t("file.file_date")}</FormLabel>
                 <Input
                   value={fileState.value?.uploadDate.toLocaleString() || ""}
                   id={"uploadDate"}
                   variant={fileState.loading ? "filled" : "outline"}
-                  placeholder={"Loading..."}
+                  placeholder={i18n.t("file.plh_load")}
                   isReadOnly
                 />
               </Box>
               <Divider />
               <Box>
-                <FormLabel htmlFor={"wordCode"}>Word code</FormLabel>
+                <FormLabel htmlFor={"wordCode"}>{i18n.t("file.file_wc")}</FormLabel>
                 <Textarea
                   ref={initialRef as any}
                   value={wordCode}
@@ -146,7 +148,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
                 />
                 <Flex justify={"flex-end"} mt={2}>
                   <Button colorScheme={"green"} variant={"outline"} onClick={copyWordCode}>
-                    Copy word code
+                    {i18n.t("file.btn_wc_copy")}
                   </Button>
                 </Flex>
               </Box>
@@ -161,7 +163,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
                 isLoading={removeFileState.loading}
                 onClick={openRemoveModal}
               >
-                Remove
+                {i18n.t("file.btn_remove")}
               </Button>
             )}
             <Button
@@ -170,7 +172,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
               isDisabled={!fileState.value}
               onClick={() => downloadFileFn(wordCode, fileState.value!.name)}
             >
-              Download
+              {i18n.t("file.btn_download")}
             </Button>
           </DrawerFooter>
         </DrawerContent>
@@ -178,10 +180,10 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
       <Modal isOpen={isRemoveModalOpen} onClose={closeRemoveModal}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Remove file</ModalHeader>
+          <ModalHeader>{i18n.t("file.modal_header")}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Are you sure you want to remove this file? This action is irreversible!</Text>
+            <Text>{i18n.t("file.modal_text")}</Text>
           </ModalBody>
           <ModalFooter>
             <Button
@@ -189,7 +191,7 @@ export default function FileView({ isOpen, onClose }: { isOpen: boolean; onClose
               isLoading={removeFileState.loading}
               onClick={() => removeFileFn(wordCode, fileState.value!.name)}
             >
-              Remove
+              {i18n.t("file.btn_remove")}
             </Button>
           </ModalFooter>
         </ModalContent>
