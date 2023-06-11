@@ -91,7 +91,23 @@
     },
     "file":
     {
+        "plh_load":"Loading...",
+        "err_load": "Error retrieving file information",
+        "err_download":"Error downloading file",
+        "err_removing":"Error removing file",
+        "att_wc_copied":"Word code copied!",
+        "att_wc_copied_unsuccess":"Copying word code unsuccessful",
+        "btn_wc_copy":"Copy word code",
+        "btn_remove":"Remove",
+        "btn_download":"Download",
+        "modal_header":"Remove file",
+        "modal_text":"Are you sure you want to remove this file? This action is irreversible!",
 
+        "file_info":"File info",
+        "file_name":"File name",
+        "file_type":"File type",
+        "file_date":"Upload date",
+        "file_wc":"Word code"
     },
     "footer":
     {
