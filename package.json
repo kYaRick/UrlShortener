@@ -28,8 +28,10 @@
     "react-filepond": "^7.1.1",
     "react-helmet": "^6.1.0",
     "react-i18next": "^12.3.1",
+    "react-router": "^6.12.1",
     "react-use": "^17.2.4",
-    "rxjs": "^7.3.0"
+    "rxjs": "^7.3.0",
+    "tiny-unique-id": "^1.0.6"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
