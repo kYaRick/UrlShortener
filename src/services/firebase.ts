@@ -1,3 +1,5 @@
+import firestore from "firebase/firestore";
+
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../util/firebase-config";
 
@@ -17,6 +19,7 @@ class FirebaseService {
    */
   async init() {
     this._app = initializeApp(firebaseConfig);
+
   }
 }
 

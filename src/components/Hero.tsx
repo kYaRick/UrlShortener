@@ -23,70 +23,12 @@ import {
 
 import { useTranslation } from "react-i18next";
 import { LinkIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { UrlShortenerField } from './UrlShortenerComponent';
 
 import { useViewController } from "../ViewController";
 import { DownloadIcon } from "./icons/download";
 import { UploadIcon } from "./icons/upload";
 import { useState } from "preact/hooks";
-
-const UrlField = ({ colorMode }) => {
-  const { i18n } = useTranslation();
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseOver = () => {
-    setIsHovered(true);
-    // Additional logic or state updates on mouse enter
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    // Additional logic or state updates on mouse leave
-  };
-
-  return (
-    <Popover>
-
-      <PopoverTrigger>
-        <span>
-          <div
-            onMouseEnter={handleMouseOver}
-            onMouseLeave={handleMouseLeave}
-            style={{ display: "inline-block" }}
-          >
-            <Stack direction={{ base: "column", md: "row" }} pt={6} w={"xl"} justify={"center"}>
-              <InputGroup
-                shadow={"sm"}
-                borderColor={"violet.400"}>
-                <InputLeftAddon children={<LinkIcon />} />
-                <Input
-                  focusBorderColor={"violet.400"}
-                  placeholder={i18n.t("hero.url_textbox")}
-                  type="url" />
-              </InputGroup>
-              <IconButton aria-label='Short link' colorScheme={"violet"}>
-                <ArrowForwardIcon />
-              </IconButton>
-            </Stack>
-          </div>
-        </span>
-      </PopoverTrigger>
-
-      <PopoverContent bg="tomato" color="white">
-        <PopoverHeader fontWeight="semibold">
-          {i18n.t("hero.url_attention.title")}
-        </PopoverHeader>
-        <PopoverArrow bg="pink.500" />
-        <PopoverCloseButton bg="purple.500" />
-        <PopoverBody>
-          {i18n.t("hero.url_attention.f_line")} 
-          <br/>
-          <br/>
-          {i18n.t("hero.url_attention.s_line")}
-        </PopoverBody>
-      </PopoverContent>
-    </Popover >
-  );
-};
 
 export const Hero: React.FC = () => {
   const { i18n } = useTranslation();
@@ -147,7 +89,7 @@ export const Hero: React.FC = () => {
           </Text>
         </Heading>
         
-        <UrlField colorMode={undefined}/>
+        <UrlShortenerField/>
 
         <Stack direction={{ base: "column", md: "row" }} pt={6} w={"full"} justify={"center"}>
           <Button
