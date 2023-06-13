@@ -786,7 +786,7 @@ footer button {
   /* Menu */
 
   header {
-    padding: 30px;
+    white-space: nowrap;
   }
 
   /* Input field for URL */
@@ -969,6 +969,10 @@ footer button {
 @media screen and (max-width: 768px) {
   /* Menu */
 
+  header {
+    white-space: nowrap;
+  }
+
   .hamburger_menu {
     display: flex;
   }
@@ -1099,7 +1103,7 @@ footer button {
   }
 
   .user_authentication {
-    margin-left: 97px;
+    margin-left: 93px;
     margin-top: 5px;
   }
 
@@ -1131,7 +1135,7 @@ footer button {
   }
 
   .url_submit_container input {
-    width: 580px;
+    width: 550px;
     height: 70px;
     font-size: 18px;
     padding-left: 30px;
@@ -1144,7 +1148,7 @@ footer button {
   .url_submit_container button {
     width: 130px;
     height: 70px;
-    right: 10px;
+    right: 40px;
   }
 
   .url_submit_container button img {
@@ -1215,22 +1219,13 @@ footer button {
   }
 
   .text {
-    width: 390px;
+    width: 520;
     height: auto;
   }
 
   .text p {
     font-size: 16px;
     line-height: 200%;
-  }
-
-  .image_url_shortener {
-    width: 415px;
-  }
-
-  .image_url_shortener img {
-    max-width: 100%;
-    height: auto;
   }
 
   /* Reviews */
@@ -1256,12 +1251,12 @@ footer button {
   }
 
   .user_comment {
-    width: 389px;
+    width: auto;
     height: auto;
   }
 
   .user img {
-    width: 30%;
+    width: 25%;
   }
 
   .user_comment img:first-child {
@@ -1320,7 +1315,7 @@ footer button {
   /* Menu */
 
   header {
-    padding: 20px;
+    white-space: nowrap;
   }
 
   .logo img {
