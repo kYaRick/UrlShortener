@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, IconButton, Flex, Heading, Stack, Text, useColorMode, VStack, Input, InputGroup, InputLeftAddon, PopoverContent, PopoverTrigger, PopoverHeader, PopoverArrow, PopoverCloseButton, PopoverBody, Popover } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { DeleteIcon, LinkIcon, ArrowForwardIcon } from '@chakra-ui/icons';
@@ -11,34 +11,42 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 export const UrlShortenerField = () => {
+  const host = 'http://localhost:5173/UrlShortener/';
+
   const { i18n } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
   const [isShorten, setIsShorten] = useState(false);
   const [shortenedLink, setShortenLink] = useState("");
+  const [firebaseLink, setFirebaseLink] = useState("");
   const [originalUrl, setOriginalUrl] = useState("");
 
-  const shortenLink = (url) => {
-    const uniqueId = nanoid(8);
-    const shortenedUrl = `http://localhost:5173/UrlShortener/${uniqueId}`;
+  useEffect(() => {
+    console.log("Посилання успішно збережено в Firestore:", firebaseLink);
+  }, [firebaseLink]);
 
-    // Зберігаємо посилання в Firestore
-    db.collection("shortenedLinks").add({
-      originalUrl: url,
-      shortenedUrl: shortenedUrl,
-    })
-      .then((docRef) => {
-        console.log("Посилання успішно збережено в Firestore:", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Помилка при збереженні посилання в Firestore:", error);
+  const shortenLink = async (url) => {
+    try {
+      const uniqueId = nanoid(8);
+      const shortenedUrl = `${host}${uniqueId}`;
+
+      const docRef = await db.collection("shortenedLinks").add({
+        originalUrl: url,
+        shortenedUrl: shortenedUrl,
       });
 
-    return shortenedUrl;
+      const link = host.toString() + docRef.id.toString();
+      setFirebaseLink(link);
+
+      return shortenedUrl;
+    } catch (error) {
+      console.error("Помилка при збереженні посилання в Firestore:", error);
+      return "";
+    }
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    const shortenedUrl = shortenLink(originalUrl);
+    const shortenedUrl = await shortenLink(originalUrl);
 
     if (shortenedUrl) {
       setIsShorten(true);
@@ -109,8 +117,8 @@ export const UrlShortenerField = () => {
         <PopoverBody>
           {isShorten ? (
             <>
-              <Text>{shortenedLink}</Text>
-              <Button onClick={() => navigator.clipboard.writeText(shortenedLink)}>
+              <Text>{firebaseLink}</Text>
+              <Button onClick={() => navigator.clipboard.writeText(firebaseLink)}>
                 Copy
               </Button>
             </>

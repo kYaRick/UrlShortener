@@ -14,7 +14,9 @@ import FirebaseService from "./services/firebase";
 import "./util/base.css";
 import theme from "./util/theme";
 import React from "react";
-import { useTranslation, Trans } from 'react-i18next';
+import RedirectPage from './components/RedirectPage';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
 
 function App() {
   const setupState = useAsync(async () => {
@@ -45,9 +47,14 @@ function App() {
           </>
         ) : (
           <VStack justify="stretch" h="full" w="full">
-            <Navbar />
-            <Hero />
-            <Footer />
+            <Router>
+              <Routes>
+                <Route path="/UrlShortener/:id" element={<RedirectPage />} />
+              </Routes>
+              <Navbar />
+              <Hero />
+              <Footer />
+            </Router>
           </VStack>
         )}
         {!!userId && <ViewController />}

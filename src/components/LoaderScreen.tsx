@@ -13,6 +13,10 @@ export const LoaderScreen = () => (
     align={"center"}
     justify={"center"}
   >
-    <CircularProgress isIndeterminate size={24} trackColor={"blackAlpha.700"} color={"gray.100"} />
+    <CircularProgress
+      isIndeterminate size={24}
+      trackColor={"blackAlpha.700"}
+      color={"gray.100"}
+      zIndex={999} />
   </Flex>
 );
