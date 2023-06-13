@@ -6,6 +6,7 @@ import webmanifest from "./webmanifest.config";
 
 export default defineConfig({
   plugins: [preact(), VitePWA({ registerType: "autoUpdate", manifest: webmanifest as any })],
+  base: "/UrlShortener/",
   build: {
     outDir: 'build',
     rollupOptions: {
