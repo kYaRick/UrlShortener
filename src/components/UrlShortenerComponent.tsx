@@ -1,72 +1,110 @@
-import React, { useState, useEffect } from "react";
-import { Box, Button, IconButton, Flex, Heading, Stack, Text, useColorMode, VStack, Input, InputGroup, InputLeftAddon, PopoverContent, PopoverTrigger, PopoverHeader, PopoverArrow, PopoverCloseButton, PopoverBody, Popover } from "@chakra-ui/react";
+import React, { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { DeleteIcon, LinkIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, CopyIcon, DeleteIcon, LinkIcon } from '@chakra-ui/icons';
 import { nanoid } from 'nanoid';
 import firebase from "firebase/compat/app";
-import "firebase/compat/firestore";
 import firebaseConfig from "../util/firebase-config";
+import "firebase/compat/firestore";
+
+import 
+{ 
+  useToast,
+  IconButton, 
+  Stack, 
+  Text, 
+  Input, 
+  InputGroup, 
+  InputLeftAddon, 
+  PopoverContent, 
+  PopoverTrigger, 
+  PopoverBody, 
+  Popover, 
+  HStack
+} from "@chakra-ui/react";
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 export const UrlShortenerField = () => {
-  const host = 'http://localhost:5173/UrlShortener/';
-
+  const host:string = 'http://localhost:5173/UrlShortener/';
   const { i18n } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
   const [isShorten, setIsShorten] = useState(false);
   const [shortenedLink, setShortenLink] = useState("");
   const [firebaseLink, setFirebaseLink] = useState("");
   const [originalUrl, setOriginalUrl] = useState("");
+  
+  const toast = useToast();
 
-  useEffect(() => {
-    console.log("Посилання успішно збережено в Firestore:", firebaseLink);
-  }, [firebaseLink]);
-
-  const shortenLink = async (url) => {
+  const handleCopyClick = async () => {
     try {
-      const uniqueId = nanoid(8);
-      const shortenedUrl = `${host}${uniqueId}`;
-
-      const docRef = await db.collection("shortenedLinks").add({
-        originalUrl: url,
-        shortenedUrl: shortenedUrl,
+      await navigator.clipboard.writeText(firebaseLink);
+      toast({
+        title: i18n.t("url_shortener_cnt.tost_success"),
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
       });
-
-      const link = host.toString() + docRef.id.toString();
-      setFirebaseLink(link);
-
-      return shortenedUrl;
     } catch (error) {
-      console.error("Помилка при збереженні посилання в Firestore:", error);
-      return "";
+      toast({
+        title: i18n.t("url_shortener_cnt.tost_fail"),
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
     }
   };
 
-  const submitHandler = async (e) => {
+  const submitHandler = async (e) => 
+  {
     e.preventDefault();
     const shortenedUrl = await shortenLink(originalUrl);
 
     if (shortenedUrl) {
       setIsShorten(true);
       setShortenLink(shortenedUrl);
-      console.log(`Shortened URL: ${shortenedUrl}`);
+      console.log(`[kYaDebug] Shortened URL: ${shortenedUrl}`);
     }
   };
 
-  const resetHandler = () => {
+  const handleMouseOver = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+  const resetHandler = () => 
+  {
     setOriginalUrl("");
     setShortenLink("");
     setIsShorten(false);
   };
 
-  const handleMouseOver = () => {
-    setIsHovered(true);
-  };
+  useEffect(() => {
+    console.log(`[kYaDebug] Firebase link was uploaded: ${firebaseLink}`);
+  }, [firebaseLink]);
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
+  const shortenLink = async (url:string) => {
+    const uniqueId:string = nanoid(8);
+    const shortenedUrl:string = `${host}${uniqueId}`;
+
+    let result:string = "";
+
+    try {
+      const docRef = await db.collection("shortenedLinks").add({
+        originalUrl: url,
+        shortenedUrl: shortenedUrl,
+      });
+
+      setFirebaseLink(`${host}${docRef.id}`);
+      
+      result = shortenedUrl;
+    } 
+    catch (error) 
+    {
+      console.error(`[kYaDebug] Firebase link was uploaded: ${error}`);
+      result = "";
+    }
+    finally
+    {
+      return result;
+    }
   };
 
   return (
@@ -110,21 +148,36 @@ export const UrlShortenerField = () => {
           </Stack>
         </form>
       </PopoverTrigger>
+      
       <PopoverContent>
-        <PopoverArrow />
-        <PopoverCloseButton />
-        <PopoverHeader>Shortened URL</PopoverHeader>
         <PopoverBody>
-          {isShorten ? (
-            <>
-              <Text>{firebaseLink}</Text>
-              <Button onClick={() => navigator.clipboard.writeText(firebaseLink)}>
-                Copy
-              </Button>
-            </>
-          ) : (
-            <Text>No URL shortened yet.</Text>
-          )}
+          {
+            isShorten ?
+              (
+                <HStack>
+                  <Text>
+                    {
+                      firebaseLink
+                    }
+                  </Text>
+                  <IconButton
+                    aria-label={i18n.t("url_shortener_cnt.btn_text")}
+                    colorScheme={"violet"}
+                    onClick={handleCopyClick}
+                  >
+                    <CopyIcon />
+                  </IconButton>
+                </HStack>
+              )
+              :
+              (
+                <Text>
+                  {i18n.t("url_shortener_cnt.window_title")}
+                  <br />
+                  {i18n.t("url_shortener_cnt.no_url_text")}
+                </Text>
+              )
+          }
         </PopoverBody>
       </PopoverContent>
     </Popover>

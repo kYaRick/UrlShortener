@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Modal, ModalContent, VStack, CircularProgress } from "@chakra-ui/react";
 import { useParams, useNavigate } from 'react-router-dom';
+import { LoaderScreen } from "./LoaderScreen";
+import firebaseConfig from '../util/firebase-config';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
-import firebaseConfig from '../util/firebase-config';
-import { LoaderScreen } from "./LoaderScreen";
 
 const RedirectPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -25,12 +24,12 @@ const RedirectPage: React.FC = () => {
 
                     window.location.href = originalUrl;
                 } else {
-                    console.error('Посилання не знайдено');
+                    console.error('[kYaDebug] Link was not found.');
                     navigate('/UrlShortener/not-found');
                 }
             })
             .catch((error) => {
-                console.error('Помилка при отриманні посилання з бази даних:', error);
+                console.error('[kYaDebug] Link analyze error:', error);
                 navigate('/UrlShortener/error');
             })
             .finally(() => {

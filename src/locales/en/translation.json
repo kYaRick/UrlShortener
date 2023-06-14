@@ -62,9 +62,15 @@
         "sign_title": "Signed in as",
         "sign_in": "Sign-in",
         "success": "Successfully signed out!",
+        "exit": "Come again!",
         "fail":"Error signing out",
         "choose": "Choose a sign-in method",
-        "sign_out": "Sign Out"
+        "sign_out": "Sign Out",
+
+        "toast_success_si": "Successfully signed in!",
+        "toast_success_ae": "Whoops! You already have an account.",
+        "toast_success_ae_des": "Try signing in with the original method you used to sign up.",
+        "toast_fail_si": "Error signing in"
     },
     "download":
     {
@@ -113,6 +119,14 @@
         "file_type":"File type",
         "file_date":"Upload date",
         "file_wc":"Word code"
+    },
+    "url_shortener_cnt":
+    {
+        "window_title":"Shortened URL.",
+        "no_url_text":"But no URL shortened yet.",
+        "btn_text":"Copy",
+        "tost_success":"Link was copied",
+        "tost_fail":"Copy failed"
     },
     "footer":
     {

@@ -6,8 +6,8 @@ import App from "./App";
 
 registerSW({
   onRegistered() {
-    console.info("[SW]:", "Registered!");
+    console.info("[kYaDebug]:", "Registered!");
   },
 });
 
-render(<App />, document.getElementById("app")!);
+render(<App/>, document.getElementById("app")!);
