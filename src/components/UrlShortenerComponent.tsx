@@ -26,7 +26,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 export const UrlShortenerField = () => {
-  const host:string = 'http://localhost:5173/UrlShortener/';
+  const host:string = 'https://kyarick.github.io/UrlShortener/';
   const { i18n } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
   const [isShorten, setIsShorten] = useState(false);
