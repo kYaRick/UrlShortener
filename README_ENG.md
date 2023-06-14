@@ -2,9 +2,9 @@
   
 # ⚡️ URL SHORTENER
 |![mImage](./docs/imgs/mUrlShortener.jpg)|
-|:---:|
+<!-- |:---:|
 |![Uploading a file](./assets/ShareMethod.gif)|
-|![Downloading a file](./assets/DownloadMethods.gif)|
+|![Downloading a file](./assets/DownloadMethods.gif)| -->
 **a project created by [URL SHORTENER TEAM](#)**
   
 ### [Check it out](https://kyarick.github.io/UrlShortener/) | [Learn how it's made](https://github.com/kYaRick/UrlShortener/wiki) | [Support the project](https://github.com/kYaRick/UrlShortener)
@@ -12,6 +12,13 @@
 </div>
 
 ---
+### Choose language
+<a href="./README.md">
+  <img src="./docs/imgs/Ukraine.png" alt="Опис" width="30" height="30">
+</a>
+<a href="./README_ENG.md">
+  <img src="./docs/imgs/United-States.png" alt="Опис" width="30" height="30">
+</a>
 
 <br />
 

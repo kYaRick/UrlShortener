@@ -3,9 +3,9 @@
 # ⚡️ URL SHORTENER
 
 |![mImage](./docs/imgs/mUrlShortener.jpg)|
-|:---:|
+<!-- |:---:|
 |![Shared](./docs/gifs/ShareMethod.gif)|
-|![Download](./docs/gifs/DownloadMethods.gif)|
+|![Download](./docs/gifs/DownloadMethods.gif)| -->
 **Проект створений командою URL SHORTENER**
   
 ### [Перевірити](https://kyarick.github.io/UrlShortener/) | [Дізнатися, як це працює](https://github.com/kYaRick/UrlShortener/wiki) | [Підтримати проект](https://github.com/kYaRick/UrlShortener)
