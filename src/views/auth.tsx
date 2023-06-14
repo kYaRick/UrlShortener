@@ -69,7 +69,7 @@ export default function AuthView({ isOpen, onClose }: { isOpen: boolean; onClose
     try {
       await AuthService.I.signOut();
       toast({
-        title: i18n.t("auth.success"),
+        title: i18n.t("auth.exit"),
         status: "success",
         isClosable: true,
       });

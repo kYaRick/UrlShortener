@@ -2,33 +2,20 @@ import React from "react";
 import {
   Box,
   Button,
-  IconButton,
   Flex,
   Heading,
   Stack,
   Text,
   useColorMode,
   VStack,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverHeader,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverBody,
-  Popover,
 } from "@chakra-ui/react";
 
 import { useTranslation } from "react-i18next";
-import { LinkIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { UrlShortenerField } from './UrlShortenerComponent';
 
 import { useViewController } from "../ViewController";
 import { DownloadIcon } from "./icons/download";
 import { UploadIcon } from "./icons/upload";
-import { useState } from "preact/hooks";
 
 export const Hero: React.FC = () => {
   const { i18n } = useTranslation();
